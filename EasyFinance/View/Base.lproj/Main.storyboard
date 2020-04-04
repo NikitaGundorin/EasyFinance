@@ -25,8 +25,11 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jn-hi-0NI" customClass="AddButton" customModule="EasyFinance" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="59" width="374" height="48"/>
                                                 <state key="normal" title="Добавить доход"/>
+                                                <connections>
+                                                    <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u27-mJ-y3B"/>
+                                                </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-M1-sFI">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-M1-sFI">
                                                 <rect key="frame" x="20" y="20" width="374" height="19"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -44,7 +47,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="qHp-6R-fAG" secondAttribute="bottom" id="OKg-lQ-3Zz"/>
                                     <constraint firstItem="qHp-6R-fAG" firstAttribute="leading" secondItem="U14-3C-ncd" secondAttribute="leading" id="PHp-Bc-Lbp"/>
@@ -138,8 +140,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="8Jn-hi-0NI" id="Tni-c6-Wr9"/>
+                        <outlet property="addTextField" destination="Oer-M1-sFI" id="gso-i8-Bp6"/>
                         <outlet property="balance" destination="iK4-PX-TJ9" id="nmt-vJ-9eU"/>
+                        <outlet property="bottomConstraint" destination="uzm-t2-wvW" id="zva-6V-6aO"/>
                         <outlet property="dataProvider" destination="jYp-oU-IuT" id="WTl-Z4-dxV"/>
+                        <outlet property="popupView" destination="U14-3C-ncd" id="byE-zu-Xz2"/>
                         <outlet property="tableView" destination="8Du-zI-ECQ" id="jqB-uM-kuV"/>
                     </connections>
                 </viewController>
