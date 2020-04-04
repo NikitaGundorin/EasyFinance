@@ -29,4 +29,20 @@ class DBManager {
             realm.delete(income)
         }
     }
+    
+    func getAllCategories() -> Results<Category> {
+        realm.objects(Category.self)
+    }
+    
+    func addCategory(category: Category) {
+        try! realm.write {
+            realm.add(category)
+        }
+    }
+    
+    func deleteCategory(category: Category) {
+        try! realm.write {
+            realm.delete(category)
+        }
+    }
 }

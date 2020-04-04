@@ -189,16 +189,133 @@
         <!--Расходы-->
         <scene sceneID="fwb-pM-Ihl">
             <objects>
-                <viewController id="iwi-GB-6wY" sceneMemberID="viewController">
+                <viewController id="iwi-GB-6wY" customClass="CategoryViewController" customModule="EasyFinance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EdQ-bG-dNf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auP-pM-Dv4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zl-VT-C2q">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phJ-93-BaA">
+                                        <rect key="frame" x="0.0" y="666" width="414" height="147"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxj-wk-Iah" customClass="AddButton" customModule="EasyFinance" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="59" width="374" height="48"/>
+                                                <state key="normal" title="Добавить категорию расходов"/>
+                                                <connections>
+                                                    <action selector="addButtonTapped:" destination="iwi-GB-6wY" eventType="touchUpInside" id="crY-WI-T4Z"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Наименование" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="xzS-TH-TSV">
+                                                <rect key="frame" x="20" y="20" width="374" height="19"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Hxj-wk-Iah" firstAttribute="leading" secondItem="phJ-93-BaA" secondAttribute="leading" constant="20" id="1jC-3g-eAZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="xzS-TH-TSV" secondAttribute="trailing" constant="20" id="Hc9-HB-cmz"/>
+                                            <constraint firstAttribute="bottom" secondItem="Hxj-wk-Iah" secondAttribute="bottom" constant="40" id="Tgu-vc-tn4"/>
+                                            <constraint firstItem="xzS-TH-TSV" firstAttribute="leading" secondItem="phJ-93-BaA" secondAttribute="leading" constant="20" id="W9X-sa-Hub"/>
+                                            <constraint firstItem="xzS-TH-TSV" firstAttribute="top" secondItem="phJ-93-BaA" secondAttribute="top" constant="20" id="afp-Cc-ccK"/>
+                                            <constraint firstItem="Hxj-wk-Iah" firstAttribute="top" secondItem="xzS-TH-TSV" secondAttribute="bottom" constant="20" id="ky3-18-Uk3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hxj-wk-Iah" secondAttribute="trailing" constant="20" id="xiW-8u-aGo"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="phJ-93-BaA" firstAttribute="leading" secondItem="auP-pM-Dv4" secondAttribute="leading" id="27g-s0-U7W"/>
+                                    <constraint firstAttribute="trailing" secondItem="phJ-93-BaA" secondAttribute="trailing" id="4R0-ed-Pg5"/>
+                                    <constraint firstItem="0zl-VT-C2q" firstAttribute="top" secondItem="auP-pM-Dv4" secondAttribute="top" id="Q2c-TH-pg8"/>
+                                    <constraint firstItem="phJ-93-BaA" firstAttribute="top" secondItem="0zl-VT-C2q" secondAttribute="bottom" id="Xus-D8-vg0"/>
+                                    <constraint firstAttribute="bottom" secondItem="phJ-93-BaA" secondAttribute="bottom" id="bDb-b6-wTe"/>
+                                    <constraint firstItem="0zl-VT-C2q" firstAttribute="leading" secondItem="auP-pM-Dv4" secondAttribute="leading" id="d1M-2M-Esd"/>
+                                    <constraint firstAttribute="trailing" secondItem="0zl-VT-C2q" secondAttribute="trailing" id="g27-RV-gNd"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bni-Ah-Kx4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="onH-AF-ckp">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Расходы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lr8-B6-X6M">
+                                            <rect key="frame" x="141.5" y="5" width="131" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Lr8-B6-X6M" firstAttribute="centerY" secondItem="onH-AF-ckp" secondAttribute="centerY" id="TEF-db-Yau"/>
+                                        <constraint firstItem="Lr8-B6-X6M" firstAttribute="centerX" secondItem="onH-AF-ckp" secondAttribute="centerX" id="eeE-lN-WTS"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="0f6-Ve-0fA" customClass="CategoryTableViewCell" customModule="EasyFinance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0f6-Ve-0fA" id="ZNg-cT-1TY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прочее" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypL-xJ-t66">
+                                                    <rect key="frame" x="20" y="11.5" width="61" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ypL-xJ-t66" firstAttribute="centerY" secondItem="ZNg-cT-1TY" secondAttribute="centerY" id="Dak-Be-u4j"/>
+                                                <constraint firstItem="ypL-xJ-t66" firstAttribute="leading" secondItem="ZNg-cT-1TY" secondAttribute="leading" constant="20" id="ciz-cL-RnV"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ypL-xJ-t66" secondAttribute="trailing" constant="333" id="ngA-uM-0a9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="ypL-xJ-t66" id="FNz-ON-iXU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="kZh-FD-JyV" id="Gwn-Hq-gCD"/>
+                                    <outlet property="delegate" destination="kZh-FD-JyV" id="YPf-q7-ZZ4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Bni-Ah-Kx4" firstAttribute="top" secondItem="EdQ-bG-dNf" secondAttribute="top" id="23a-Ui-qmi"/>
+                            <constraint firstItem="Hxj-wk-Iah" firstAttribute="top" secondItem="Bni-Ah-Kx4" secondAttribute="bottom" constant="20" id="CJk-sg-Jf3"/>
+                            <constraint firstItem="auP-pM-Dv4" firstAttribute="bottom" secondItem="LdE-s5-Jxe" secondAttribute="bottom" id="IgJ-El-Uaw"/>
+                            <constraint firstItem="Bni-Ah-Kx4" firstAttribute="leading" secondItem="LdE-s5-Jxe" secondAttribute="leading" id="Pkw-bZ-Y8f"/>
+                            <constraint firstItem="LdE-s5-Jxe" firstAttribute="trailing" secondItem="Bni-Ah-Kx4" secondAttribute="trailing" id="PpU-Fc-xPv"/>
+                            <constraint firstItem="auP-pM-Dv4" firstAttribute="top" secondItem="EdQ-bG-dNf" secondAttribute="top" id="QPc-t4-wsc"/>
+                            <constraint firstItem="auP-pM-Dv4" firstAttribute="leading" secondItem="LdE-s5-Jxe" secondAttribute="leading" id="dL5-RU-ld6"/>
+                            <constraint firstItem="auP-pM-Dv4" firstAttribute="trailing" secondItem="LdE-s5-Jxe" secondAttribute="trailing" id="nWd-iV-hlg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LdE-s5-Jxe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Расходы" image="cart.fill" catalog="system" id="KOT-n2-4vR"/>
+                    <connections>
+                        <outlet property="addButton" destination="Hxj-wk-Iah" id="YeM-Mn-buy"/>
+                        <outlet property="addTextField" destination="xzS-TH-TSV" id="H8g-Ju-mO9"/>
+                        <outlet property="bottomConstraint" destination="bDb-b6-wTe" id="nbD-eJ-cIT"/>
+                        <outlet property="dataProvider" destination="kZh-FD-JyV" id="9T6-ks-Ytz"/>
+                        <outlet property="dimmerView" destination="0zl-VT-C2q" id="t1L-qe-A0M"/>
+                        <outlet property="popupView" destination="auP-pM-Dv4" id="Kbg-Fd-tXy"/>
+                        <outlet property="tableView" destination="Bni-Ah-Kx4" id="fz8-Td-Iym"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc4-ML-h66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="kZh-FD-JyV" customClass="CategoryDataProvider" customModule="EasyFinance" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2710.144927536232" y="137.94642857142856"/>
         </scene>
@@ -208,6 +325,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="elH-fE-BOQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KXC-z9-t4m">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

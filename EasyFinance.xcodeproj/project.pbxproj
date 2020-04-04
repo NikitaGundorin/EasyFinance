@@ -12,6 +12,10 @@
 		72663DC62438D7C500F14EFD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; };
 		72663DC72438D7C500F14EFD /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72663DCC2438D81000F14EFD /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72663DCB2438D81000F14EFD /* DBManager.swift */; };
+		72811FE92439260B008C2E34 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FE82439260B008C2E34 /* CategoryViewController.swift */; };
+		72811FEB24392626008C2E34 /* CategoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEA24392626008C2E34 /* CategoryDataProvider.swift */; };
+		72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEC24392683008C2E34 /* CategoryViewModel.swift */; };
+		72811FEF2439277E008C2E34 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */; };
 		72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426BF243899D2006A61CC /* AppDelegate.swift */; };
 		72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C1243899D2006A61CC /* SceneDelegate.swift */; };
 		72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C3243899D2006A61CC /* IncomeViewController.swift */; };
@@ -48,6 +52,10 @@
 		72663DC22438D7C500F14EFD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		72663DC32438D7C500F14EFD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		72663DCB2438D81000F14EFD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		72811FE82439260B008C2E34 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		72811FEA24392626008C2E34 /* CategoryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataProvider.swift; sourceTree = "<group>"; };
+		72811FEC24392683008C2E34 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		72B426BC243899D2006A61CC /* EasyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B426BF243899D2006A61CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72B426C1243899D2006A61CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +153,8 @@
 				72B426C3243899D2006A61CC /* IncomeViewController.swift */,
 				72B426E52438A693006A61CC /* IncomeTableViewCell.swift */,
 				72B426E92438AE50006A61CC /* AddButton.swift */,
+				72811FE82439260B008C2E34 /* CategoryViewController.swift */,
+				72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				72B426E22438A344006A61CC /* IncomeViewModel.swift */,
+				72811FEC24392683008C2E34 /* CategoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				72B426E02438A22F006A61CC /* IncomeDataProvider.swift */,
+				72811FEA24392626008C2E34 /* CategoryDataProvider.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -275,6 +287,7 @@
 			files = (
 				72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */,
 				72B426D824389D58006A61CC /* Expence.swift in Sources */,
+				72811FE92439260B008C2E34 /* CategoryViewController.swift in Sources */,
 				72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */,
 				72663DCC2438D81000F14EFD /* DBManager.swift in Sources */,
 				72B426EA2438AE50006A61CC /* AddButton.swift in Sources */,
@@ -284,8 +297,11 @@
 				72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */,
 				72B426E82438A83E006A61CC /* FormatHelper.swift in Sources */,
 				72B426DC24389E17006A61CC /* Income.swift in Sources */,
+				72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */,
 				72B426DE24389F49006A61CC /* Balance.swift in Sources */,
 				72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */,
+				72811FEB24392626008C2E34 /* CategoryDataProvider.swift in Sources */,
+				72811FEF2439277E008C2E34 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
