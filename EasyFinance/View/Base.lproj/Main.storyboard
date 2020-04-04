@@ -3,15 +3,89 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Income View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EasyFinance" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController id="BYZ-38-t0r" customClass="IncomeViewController" customModule="EasyFinance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текущий баланс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc4-2w-sM6">
+                                <rect key="frame" x="20" y="64" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iK4-PX-TJ9">
+                                <rect key="frame" x="354" y="60" width="40" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Du-zI-ECQ">
+                                <rect key="frame" x="0.0" y="93" width="414" height="803"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="incomeCell" id="Wk3-Er-Ryp" customClass="IncomeTableViewCell" customModule="EasyFinance" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wk3-Er-Ryp" id="Auh-2d-owt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200.50 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-qJ-0Zy">
+                                                    <rect key="frame" x="20" y="11.5" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oDk-qJ-0Zy" firstAttribute="leading" secondItem="Auh-2d-owt" secondAttribute="leadingMargin" id="ls3-63-OMu"/>
+                                                <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="oDk-qJ-0Zy" secondAttribute="trailing" id="n95-on-nlm"/>
+                                                <constraint firstItem="oDk-qJ-0Zy" firstAttribute="centerY" secondItem="Auh-2d-owt" secondAttribute="centerY" id="uni-6C-IGb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="valueLabel" destination="oDk-qJ-0Zy" id="DtH-vE-mcC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jYp-oU-IuT" id="hBf-8O-F4D"/>
+                                    <outlet property="delegate" destination="jYp-oU-IuT" id="UVf-MK-Jb7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iK4-PX-TJ9" firstAttribute="centerY" secondItem="bc4-2w-sM6" secondAttribute="centerY" id="33A-6O-2b1"/>
+                            <constraint firstItem="8Du-zI-ECQ" firstAttribute="top" secondItem="iK4-PX-TJ9" secondAttribute="bottom" constant="4" id="A5v-nN-tFV"/>
+                            <constraint firstAttribute="bottom" secondItem="8Du-zI-ECQ" secondAttribute="bottom" id="ACd-mc-X0R"/>
+                            <constraint firstItem="8Du-zI-ECQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EQf-RD-U04"/>
+                            <constraint firstItem="8Du-zI-ECQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b1j-SX-I84"/>
+                            <constraint firstItem="bc4-2w-sM6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="biw-D0-ldB"/>
+                            <constraint firstItem="iK4-PX-TJ9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bc4-2w-sM6" secondAttribute="trailing" constant="8" id="hHW-hm-7Fk"/>
+                            <constraint firstItem="bc4-2w-sM6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kfJ-SL-NQr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iK4-PX-TJ9" secondAttribute="trailing" constant="20" id="wMe-zw-MWk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="balance" destination="iK4-PX-TJ9" id="nmt-vJ-9eU"/>
+                        <outlet property="dataProvider" destination="jYp-oU-IuT" id="WTl-Z4-dxV"/>
+                        <outlet property="tableView" destination="8Du-zI-ECQ" id="jqB-uM-kuV"/>
+                    </connections>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="jYp-oU-IuT" customClass="IncomeDataProvider" customModule="EasyFinance" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="139" y="137"/>
+            <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
         </scene>
     </scenes>
 </document>

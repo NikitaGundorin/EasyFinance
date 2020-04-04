@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426BF243899D2006A61CC /* AppDelegate.swift */; };
 		72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C1243899D2006A61CC /* SceneDelegate.swift */; };
-		72B426C4243899D2006A61CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C3243899D2006A61CC /* ViewController.swift */; };
+		72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C3243899D2006A61CC /* IncomeViewController.swift */; };
 		72B426C7243899D2006A61CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B426C5243899D2006A61CC /* Main.storyboard */; };
 		72B426C9243899D3006A61CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B426C8243899D3006A61CC /* Assets.xcassets */; };
 		72B426CC243899D3006A61CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B426CA243899D3006A61CC /* LaunchScreen.storyboard */; };
@@ -17,13 +17,17 @@
 		72B426DA24389DD3006A61CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426D924389DD3006A61CC /* Category.swift */; };
 		72B426DC24389E17006A61CC /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426DB24389E17006A61CC /* Income.swift */; };
 		72B426DE24389F49006A61CC /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426DD24389F49006A61CC /* Balance.swift */; };
+		72B426E12438A22F006A61CC /* IncomeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E02438A22F006A61CC /* IncomeDataProvider.swift */; };
+		72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E22438A344006A61CC /* IncomeViewModel.swift */; };
+		72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E52438A693006A61CC /* IncomeTableViewCell.swift */; };
+		72B426E82438A83E006A61CC /* formatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E72438A83E006A61CC /* formatHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		72B426BC243899D2006A61CC /* EasyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B426BF243899D2006A61CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72B426C1243899D2006A61CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		72B426C3243899D2006A61CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		72B426C3243899D2006A61CC /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		72B426C6243899D2006A61CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72B426C8243899D3006A61CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72B426CB243899D3006A61CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +36,10 @@
 		72B426D924389DD3006A61CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		72B426DB24389E17006A61CC /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		72B426DD24389F49006A61CC /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		72B426E02438A22F006A61CC /* IncomeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDataProvider.swift; sourceTree = "<group>"; };
+		72B426E22438A344006A61CC /* IncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel.swift; sourceTree = "<group>"; };
+		72B426E52438A693006A61CC /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
+		72B426E72438A83E006A61CC /* formatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		72B426BE243899D2006A61CC /* EasyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				72B426DF2438A221006A61CC /* DataProvider */,
 				72B426D624389B03006A61CC /* SupportingFiles */,
 				72B426D524389AF9006A61CC /* ViewModel */,
 				72B426D424389AF3006A61CC /* View */,
@@ -87,7 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				72B426C5243899D2006A61CC /* Main.storyboard */,
-				72B426C3243899D2006A61CC /* ViewController.swift */,
+				72B426C3243899D2006A61CC /* IncomeViewController.swift */,
+				72B426E52438A693006A61CC /* IncomeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,6 +105,7 @@
 		72B426D524389AF9006A61CC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				72B426E22438A344006A61CC /* IncomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -107,8 +118,17 @@
 				72B426C8243899D3006A61CC /* Assets.xcassets */,
 				72B426CA243899D3006A61CC /* LaunchScreen.storyboard */,
 				72B426CD243899D3006A61CC /* Info.plist */,
+				72B426E72438A83E006A61CC /* formatHelper.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		72B426DF2438A221006A61CC /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				72B426E02438A22F006A61CC /* IncomeDataProvider.swift */,
+			);
+			path = DataProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,10 +202,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */,
 				72B426D824389D58006A61CC /* Expence.swift in Sources */,
+				72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */,
 				72B426DA24389DD3006A61CC /* Category.swift in Sources */,
-				72B426C4243899D2006A61CC /* ViewController.swift in Sources */,
+				72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */,
+				72B426E12438A22F006A61CC /* IncomeDataProvider.swift in Sources */,
 				72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */,
+				72B426E82438A83E006A61CC /* formatHelper.swift in Sources */,
 				72B426DC24389E17006A61CC /* Income.swift in Sources */,
 				72B426DE24389F49006A61CC /* Balance.swift in Sources */,
 				72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */,
