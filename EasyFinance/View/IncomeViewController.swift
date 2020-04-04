@@ -54,9 +54,15 @@ class IncomeViewController: UIViewController {
             
             switch changes {
             case .initial:
-                tableView.reloadData()
-            case .update:
-                tableView.reloadData()
+                break
+            case .update(_, let deletions, _, _):
+                if deletions.count > 0 {
+                    let indexPaths = deletions.map{ IndexPath(row: $0, section: 0) }
+                    tableView.deleteRows(at: indexPaths, with: .automatic)
+                }
+                else {
+                     tableView.reloadData()
+                }
                 self.balance.text = self.viewModel.balance
             case .error: break
             }

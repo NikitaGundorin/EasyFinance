@@ -30,13 +30,14 @@ class IncomeDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         var contextualActions: [UIContextualAction] = []
         
-        let action = UIContextualAction(style: .destructive, title: "Удалить") {_,_,_ in
+        let action = UIContextualAction(style: .destructive, title: "Удалить") {_,_,completion in
             self.viewModel.deleteIncome(row: indexPath.row)
+            completion(true)
         }
         contextualActions.append(action)
         
         let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: contextualActions)
-        swipeActionsConfiguration.performsFirstActionWithFullSwipe = false
+        swipeActionsConfiguration.performsFirstActionWithFullSwipe = true
         
         return swipeActionsConfiguration
     }
