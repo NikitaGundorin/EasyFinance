@@ -18,4 +18,14 @@ import UIKit
         titleLabel?.textColor = UIColor.white
         self.heightAnchor.constraint(equalToConstant: 48).isActive = true
     }
+    
+    override public var isEnabled: Bool {
+        didSet {
+            if self.isEnabled {
+                self.alpha = 1
+            } else {
+                self.alpha = 0.5
+            }
+        }
+    }
 }

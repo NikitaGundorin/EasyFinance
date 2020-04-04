@@ -19,6 +19,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U14-3C-ncd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcd-ER-DAV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="749"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-6R-fAG">
                                         <rect key="frame" x="0.0" y="749" width="414" height="147"/>
                                         <subviews>
@@ -48,9 +51,13 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Fcd-ER-DAV" secondAttribute="trailing" id="0bL-4L-yTv"/>
+                                    <constraint firstItem="Fcd-ER-DAV" firstAttribute="top" secondItem="U14-3C-ncd" secondAttribute="top" id="E3W-Wg-qyd"/>
+                                    <constraint firstItem="Fcd-ER-DAV" firstAttribute="leading" secondItem="U14-3C-ncd" secondAttribute="leading" id="Lsh-Xs-mbQ"/>
                                     <constraint firstAttribute="bottom" secondItem="qHp-6R-fAG" secondAttribute="bottom" id="OKg-lQ-3Zz"/>
                                     <constraint firstItem="qHp-6R-fAG" firstAttribute="leading" secondItem="U14-3C-ncd" secondAttribute="leading" id="PHp-Bc-Lbp"/>
                                     <constraint firstAttribute="trailing" secondItem="qHp-6R-fAG" secondAttribute="trailing" id="gd4-T0-yIQ"/>
+                                    <constraint firstItem="qHp-6R-fAG" firstAttribute="top" secondItem="Fcd-ER-DAV" secondAttribute="bottom" id="yZK-e8-mw1"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Du-zI-ECQ">
@@ -145,6 +152,7 @@
                         <outlet property="balance" destination="iK4-PX-TJ9" id="nmt-vJ-9eU"/>
                         <outlet property="bottomConstraint" destination="uzm-t2-wvW" id="zva-6V-6aO"/>
                         <outlet property="dataProvider" destination="jYp-oU-IuT" id="WTl-Z4-dxV"/>
+                        <outlet property="dimmerView" destination="Fcd-ER-DAV" id="AyF-yV-YnF"/>
                         <outlet property="popupView" destination="U14-3C-ncd" id="byE-zu-Xz2"/>
                         <outlet property="tableView" destination="8Du-zI-ECQ" id="jqB-uM-kuV"/>
                     </connections>

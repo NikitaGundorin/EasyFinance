@@ -17,6 +17,7 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var addButton: AddButton!
     @IBOutlet weak var addTextField: UITextField!
     @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var dimmerView: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var viewModel: IncomeViewModel!
@@ -37,7 +38,9 @@ class IncomeViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         
-        view.addGestureRecognizer(tap)
+        dimmerView.addGestureRecognizer(tap)
+        
+        addTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
         
         viewModel = IncomeViewModel()
         dataProvider.viewModel = viewModel
@@ -77,6 +80,22 @@ class IncomeViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+        UIView.animate(withDuration: 0.2, animations: {
+            self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0)
+        }, completion: { _ in
+            self.view.bringSubviewToFront(self.tableView)
+            self.addTextField.text = ""
+            self.addButton.isEnabled = true
+        })
+    }
+    
+    @objc func enableAddButton(_ textField: UITextField) {
+        if (addTextField.text != "" && addTextField.text != nil) {
+            addButton.isEnabled = true
+        }
+        else {
+            addButton.isEnabled = false
+        }
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
@@ -85,14 +104,13 @@ class IncomeViewController: UIViewController {
             else {
                 UIView.animate(withDuration: 0.2) {
                     self.view.bringSubviewToFront(self.popupView)
-                    self.popupView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+                    self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0.5)
                     self.addTextField.becomeFirstResponder()
+                    self.addButton.isEnabled = false
                 }
                 return
         }
         viewModel.addIncome(value: value)
         dismissKeyboard()
-        addTextField.text = ""
-        self.view.bringSubviewToFront(tableView)
     }
 }
