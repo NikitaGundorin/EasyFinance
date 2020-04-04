@@ -21,6 +21,7 @@
 		72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E22438A344006A61CC /* IncomeViewModel.swift */; };
 		72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E52438A693006A61CC /* IncomeTableViewCell.swift */; };
 		72B426E82438A83E006A61CC /* FormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E72438A83E006A61CC /* FormatHelper.swift */; };
+		72B426EA2438AE50006A61CC /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E92438AE50006A61CC /* AddButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		72B426E22438A344006A61CC /* IncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel.swift; sourceTree = "<group>"; };
 		72B426E52438A693006A61CC /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
 		72B426E72438A83E006A61CC /* FormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatHelper.swift; sourceTree = "<group>"; };
+		72B426E92438AE50006A61CC /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				72B426C5243899D2006A61CC /* Main.storyboard */,
 				72B426C3243899D2006A61CC /* IncomeViewController.swift */,
 				72B426E52438A693006A61CC /* IncomeTableViewCell.swift */,
+				72B426E92438AE50006A61CC /* AddButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */,
 				72B426D824389D58006A61CC /* Expence.swift in Sources */,
 				72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */,
+				72B426EA2438AE50006A61CC /* AddButton.swift in Sources */,
 				72B426DA24389DD3006A61CC /* Category.swift in Sources */,
 				72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */,
 				72B426E12438A22F006A61CC /* IncomeDataProvider.swift in Sources */,
