@@ -16,7 +16,6 @@ class IncomeDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
         viewModel.incomes.count
     }
 
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeCell",
                                                        for: indexPath) as? IncomeTableViewCell
@@ -26,5 +25,19 @@ class IncomeDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
         cell.valueLabel.text = FormatHelper.formatCurrency(value: value)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        var contextualActions: [UIContextualAction] = []
+        
+        let action = UIContextualAction(style: .destructive, title: "Удалить") {_,_,_ in
+            self.viewModel.deleteIncome(row: indexPath.row)
+        }
+        contextualActions.append(action)
+        
+        let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: contextualActions)
+        swipeActionsConfiguration.performsFirstActionWithFullSwipe = false
+        
+        return swipeActionsConfiguration
     }
 }

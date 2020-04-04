@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72663DC42438D7C500F14EFD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC22438D7C500F14EFD /* Realm.framework */; };
+		72663DC52438D7C500F14EFD /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC22438D7C500F14EFD /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72663DC62438D7C500F14EFD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; };
+		72663DC72438D7C500F14EFD /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		72663DCC2438D81000F14EFD /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72663DCB2438D81000F14EFD /* DBManager.swift */; };
 		72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426BF243899D2006A61CC /* AppDelegate.swift */; };
 		72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C1243899D2006A61CC /* SceneDelegate.swift */; };
 		72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C3243899D2006A61CC /* IncomeViewController.swift */; };
@@ -24,7 +29,25 @@
 		72B426EA2438AE50006A61CC /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E92438AE50006A61CC /* AddButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		72663DC82438D7C500F14EFD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				72663DC72438D7C500F14EFD /* RealmSwift.framework in Embed Frameworks */,
+				72663DC52438D7C500F14EFD /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		72663DC22438D7C500F14EFD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		72663DC32438D7C500F14EFD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		72663DCB2438D81000F14EFD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		72B426BC243899D2006A61CC /* EasyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B426BF243899D2006A61CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72B426C1243899D2006A61CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,17 +72,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72663DC62438D7C500F14EFD /* RealmSwift.framework in Frameworks */,
+				72663DC42438D7C500F14EFD /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72663DC12438D7C500F14EFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72663DC22438D7C500F14EFD /* Realm.framework */,
+				72663DC32438D7C500F14EFD /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72663DCA2438D80500F14EFD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				72663DCB2438D81000F14EFD /* DBManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		72B426B3243899D2006A61CC = {
 			isa = PBXGroup;
 			children = (
 				72B426BE243899D2006A61CC /* EasyFinance */,
 				72B426BD243899D2006A61CC /* Products */,
+				72663DC12438D7C500F14EFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +117,7 @@
 		72B426BE243899D2006A61CC /* EasyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				72663DCA2438D80500F14EFD /* Managers */,
 				72B426DF2438A221006A61CC /* DataProvider */,
 				72B426D624389B03006A61CC /* SupportingFiles */,
 				72B426D524389AF9006A61CC /* ViewModel */,
@@ -144,6 +188,8 @@
 				72B426B8243899D2006A61CC /* Sources */,
 				72B426B9243899D2006A61CC /* Frameworks */,
 				72B426BA243899D2006A61CC /* Resources */,
+				72663DC82438D7C500F14EFD /* Embed Frameworks */,
+				72663DC92438D7CC00F14EFD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -200,6 +246,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72663DC92438D7CC00F14EFD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		72B426B8243899D2006A61CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -208,6 +276,7 @@
 				72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */,
 				72B426D824389D58006A61CC /* Expence.swift in Sources */,
 				72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */,
+				72663DCC2438D81000F14EFD /* DBManager.swift in Sources */,
 				72B426EA2438AE50006A61CC /* AddButton.swift in Sources */,
 				72B426DA24389DD3006A61CC /* Category.swift in Sources */,
 				72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */,
@@ -364,6 +433,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T6696YN386;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EasyFinance/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -383,6 +456,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T6696YN386;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = EasyFinance/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

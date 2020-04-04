@@ -7,13 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Income {
-    var value: Float
-    var date: Date
-    
-    init(value: Float) {
-        self.value = value
-        self.date = Date()
-    }
+class Income: Object {
+    @objc dynamic var value: Float = 0
+    @objc dynamic var date: Date = Date()
 }

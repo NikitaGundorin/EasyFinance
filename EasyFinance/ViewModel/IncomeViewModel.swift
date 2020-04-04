@@ -7,19 +7,31 @@
 //
 
 import Foundation
+import RealmSwift
 
 class IncomeViewModel {
-    var incomes: [Income] = []
+    var incomes: Results<Income>
     var balance: String {
         let total = incomes.map { income in return income.value }.reduce(0, +)
         return FormatHelper.formatCurrency(value: total)
     }
+    let dbManager = DBManager.shared
     
     init() {
-        let one = Income(value: 100)
-        let two = Income(value: 200.5)
-        let three = Income(value: 50)
-        
-        incomes.append(contentsOf: [one, two, three])
+        incomes = dbManager.getAllIncomes()
+    }
+    
+    func addIncome(value: String) {
+        guard let value = Float(value) else {
+            print("error while converting string to float")
+            return
+        }
+        let income = Income()
+        income.value = value
+        dbManager.addIncome(income: income)
+    }
+    
+    func deleteIncome(row: Int) {
+        dbManager.deleteIncome(income: incomes[row])
     }
 }

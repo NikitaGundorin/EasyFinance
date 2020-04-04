@@ -9,7 +9,7 @@
 import UIKit
 
 class IncomeViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var dataProvider: IncomeDataProvider!
     @IBOutlet weak var balance: UILabel!
@@ -21,18 +21,18 @@ class IncomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          NotificationCenter.default.addObserver(self,
-                                                 selector: #selector(keyboardWillShow),
-                                                 name: UIResponder.keyboardWillShowNotification,
-                                                 object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
         
-          NotificationCenter.default.addObserver(self,
-                                                 selector: #selector(keyboardWillHide),
-                                                 name: UIResponder.keyboardWillHideNotification,
-                                                 object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-
+        
         view.addGestureRecognizer(tap)
         
         viewModel = IncomeViewModel()
@@ -45,7 +45,7 @@ class IncomeViewController: UIViewController {
             else { return }
         self.bottomConstraint.constant = keyboardSize.height
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         self.bottomConstraint.constant = 0
     }
@@ -64,9 +64,26 @@ class IncomeViewController: UIViewController {
                     self.addTextField.becomeFirstResponder()
                 }
                 return
-            }
+        }
+        viewModel.addIncome(value: value)
         dismissKeyboard()
         addTextField.text = ""
+        tableView.reloadData()
+        balance.text = viewModel.balance
         self.view.bringSubviewToFront(tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        var contextualActions: [UIContextualAction] = []
+        
+        let action = UIContextualAction(style: .destructive, title: "Удалить") {_,_,_ in
+            self.viewModel.deleteIncome(row: indexPath.row)
+        }
+        contextualActions.append(action)
+        
+        let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: contextualActions)
+        swipeActionsConfiguration.performsFirstActionWithFullSwipe = false
+        
+        return swipeActionsConfiguration
     }
 }
