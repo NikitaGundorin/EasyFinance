@@ -13,6 +13,9 @@
 		72B426C7243899D2006A61CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B426C5243899D2006A61CC /* Main.storyboard */; };
 		72B426C9243899D3006A61CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B426C8243899D3006A61CC /* Assets.xcassets */; };
 		72B426CC243899D3006A61CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B426CA243899D3006A61CC /* LaunchScreen.storyboard */; };
+		72B426D824389D58006A61CC /* Expence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426D724389D58006A61CC /* Expence.swift */; };
+		72B426DA24389DD3006A61CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426D924389DD3006A61CC /* Category.swift */; };
+		72B426DC24389E17006A61CC /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426DB24389E17006A61CC /* Income.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		72B426C8243899D3006A61CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72B426CB243899D3006A61CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72B426CD243899D3006A61CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72B426D724389D58006A61CC /* Expence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expence.swift; sourceTree = "<group>"; };
+		72B426D924389DD3006A61CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		72B426DB24389E17006A61CC /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		72B426BE243899D2006A61CC /* EasyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				72B426D624389B03006A61CC /* SupportingFiles */,
+				72B426D524389AF9006A61CC /* ViewModel */,
+				72B426D424389AF3006A61CC /* View */,
+				72B426D324389AE9006A61CC /* Model */,
+			);
+			path = EasyFinance;
+			sourceTree = "<group>";
+		};
+		72B426D324389AE9006A61CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72B426D724389D58006A61CC /* Expence.swift */,
+				72B426D924389DD3006A61CC /* Category.swift */,
+				72B426DB24389E17006A61CC /* Income.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72B426D424389AF3006A61CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72B426C5243899D2006A61CC /* Main.storyboard */,
+				72B426C3243899D2006A61CC /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72B426D524389AF9006A61CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72B426D624389B03006A61CC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				72B426BF243899D2006A61CC /* AppDelegate.swift */,
 				72B426C1243899D2006A61CC /* SceneDelegate.swift */,
-				72B426C3243899D2006A61CC /* ViewController.swift */,
-				72B426C5243899D2006A61CC /* Main.storyboard */,
 				72B426C8243899D3006A61CC /* Assets.xcassets */,
 				72B426CA243899D3006A61CC /* LaunchScreen.storyboard */,
 				72B426CD243899D3006A61CC /* Info.plist */,
 			);
-			path = EasyFinance;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B426D824389D58006A61CC /* Expence.swift in Sources */,
+				72B426DA24389DD3006A61CC /* Category.swift in Sources */,
 				72B426C4243899D2006A61CC /* ViewController.swift in Sources */,
 				72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */,
+				72B426DC24389E17006A61CC /* Income.swift in Sources */,
 				72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +260,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				INFOPLIST_FILE = EasyFinance/EasyFinance/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +315,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				INFOPLIST_FILE = EasyFinance/EasyFinance/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,7 +332,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T6696YN386;
-				INFOPLIST_FILE = EasyFinance/Info.plist;
+				INFOPLIST_FILE = EasyFinance/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nikitagundorin.EasyFinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,7 +351,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T6696YN386;
-				INFOPLIST_FILE = EasyFinance/Info.plist;
+				INFOPLIST_FILE = EasyFinance/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nikitagundorin.EasyFinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
