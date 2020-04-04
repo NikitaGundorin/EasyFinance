@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class IncomeViewController: UIViewController {
     
@@ -17,7 +18,10 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var addTextField: UITextField!
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     var viewModel: IncomeViewModel!
+    
+    private var itemsToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,27 @@ class IncomeViewController: UIViewController {
         viewModel = IncomeViewModel()
         dataProvider.viewModel = viewModel
         balance.text = viewModel.balance
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        itemsToken = viewModel.incomes.observe { [weak tableView] changes in
+            guard let tableView = tableView else { return }
+            
+            switch changes {
+            case .initial:
+                tableView.reloadData()
+            case .update:
+                tableView.reloadData()
+                self.balance.text = self.viewModel.balance
+            case .error: break
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        itemsToken?.invalidate()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -68,22 +93,6 @@ class IncomeViewController: UIViewController {
         viewModel.addIncome(value: value)
         dismissKeyboard()
         addTextField.text = ""
-        tableView.reloadData()
-        balance.text = viewModel.balance
         self.view.bringSubviewToFront(tableView)
-    }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        var contextualActions: [UIContextualAction] = []
-        
-        let action = UIContextualAction(style: .destructive, title: "Удалить") {_,_,_ in
-            self.viewModel.deleteIncome(row: indexPath.row)
-        }
-        contextualActions.append(action)
-        
-        let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: contextualActions)
-        swipeActionsConfiguration.performsFirstActionWithFullSwipe = false
-        
-        return swipeActionsConfiguration
     }
 }
