@@ -66,6 +66,7 @@ class IncomeViewController: UIViewController {
                 return
             }
         dismissKeyboard()
+        addTextField.text = ""
         self.view.bringSubviewToFront(tableView)
     }
 }
