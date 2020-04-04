@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="elH-fE-BOQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Income View Controller-->
+        <!--Доходы-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="IncomeViewController" customModule="EasyFinance" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U14-3C-ncd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcd-ER-DAV">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="749"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-6R-fAG">
-                                        <rect key="frame" x="0.0" y="749" width="414" height="147"/>
+                                        <rect key="frame" x="0.0" y="666" width="414" height="147"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jn-hi-0NI" customClass="AddButton" customModule="EasyFinance" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="59" width="374" height="48"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Du-zI-ECQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="7Mo-2G-sRC">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="112.5"/>
@@ -142,10 +142,11 @@
                             <constraint firstItem="8Jn-hi-0NI" firstAttribute="top" secondItem="8Du-zI-ECQ" secondAttribute="bottom" constant="20" id="gvm-GK-TFy"/>
                             <constraint firstItem="U14-3C-ncd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qTS-Oa-R1V"/>
                             <constraint firstItem="U14-3C-ncd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tWW-fV-fIh"/>
-                            <constraint firstAttribute="bottom" secondItem="U14-3C-ncd" secondAttribute="bottom" id="uzm-t2-wvW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U14-3C-ncd" secondAttribute="bottom" id="uzm-t2-wvW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Доходы" image="briefcase.fill" catalog="system" id="14O-kO-PJv"/>
                     <connections>
                         <outlet property="addButton" destination="8Jn-hi-0NI" id="Tni-c6-Wr9"/>
                         <outlet property="addTextField" destination="Oer-M1-sFI" id="gso-i8-Bp6"/>
@@ -160,7 +161,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <customObject id="jYp-oU-IuT" customClass="IncomeDataProvider" customModule="EasyFinance" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="136.60714285714286"/>
+        </scene>
+        <!--График-->
+        <scene sceneID="Ii6-y9-ret">
+            <objects>
+                <viewController id="cJJ-Nd-SVj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cEh-VY-uQl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSS-bu-uv6">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ziy-j2-cpO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="График" image="chart.pie.fill" catalog="system" id="9iu-Ue-71J"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bej-vf-Rcx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1895.6521739130437" y="136.60714285714286"/>
+        </scene>
+        <!--Расходы-->
+        <scene sceneID="fwb-pM-Ihl">
+            <objects>
+                <viewController id="iwi-GB-6wY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EdQ-bG-dNf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LdE-s5-Jxe"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Расходы" image="cart.fill" catalog="system" id="KOT-n2-4vR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gc4-ML-h66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2710.144927536232" y="137.94642857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wag-s0-Zep">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="elH-fE-BOQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KXC-z9-t4m">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="qfO-zG-Gls"/>
+                        <segue destination="cJJ-Nd-SVj" kind="relationship" relationship="viewControllers" id="TyS-pX-3Ae"/>
+                        <segue destination="iwi-GB-6wY" kind="relationship" relationship="viewControllers" id="Kqm-7H-s01"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zyR-lo-esh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.27678571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="briefcase.fill" catalog="system" width="128" height="102"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="chart.pie.fill" catalog="system" width="128" height="124"/>
+    </resources>
 </document>

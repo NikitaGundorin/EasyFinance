@@ -71,7 +71,8 @@ class IncomeViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
-        self.bottomConstraint.constant = keyboardSize.height
+        let offset = keyboardSize.height - self.tabBarController!.tabBar.frame.size.height
+        self.bottomConstraint.constant = offset
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
