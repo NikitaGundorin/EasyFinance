@@ -1,5 +1,5 @@
 //
-//  Expence.swift
+//  Balance.swift
 //  EasyFinance
 //
 //  Created by Никита Гундорин on 04.04.2020.
@@ -8,14 +8,10 @@
 
 import Foundation
 
-class Expence {
+class Balance {
     var value: Float
-    var category: Category
-    var date: Date
     
-    init(value: Float, category: Category) {
+    init(value: Float) {
         self.value = value
-        self.category = category
-        self.date = Date()
     }
 }
