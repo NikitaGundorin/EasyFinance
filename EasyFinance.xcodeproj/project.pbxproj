@@ -16,6 +16,11 @@
 		72811FEB24392626008C2E34 /* CategoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEA24392626008C2E34 /* CategoryDataProvider.swift */; };
 		72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEC24392683008C2E34 /* CategoryViewModel.swift */; };
 		72811FEF2439277E008C2E34 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */; };
+		72A75EF32439F59E00788986 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EF22439F59E00788986 /* TabBarController.swift */; };
+		72A75EF5243A070600788986 /* ExpenceDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EF4243A070600788986 /* ExpenceDataProvider.swift */; };
+		72A75EF7243A074200788986 /* ExpenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EF6243A074200788986 /* ExpenceViewController.swift */; };
+		72A75EF9243A075000788986 /* ExpenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EF8243A075000788986 /* ExpenceTableViewCell.swift */; };
+		72A75EFB243A095300788986 /* ExpenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EFA243A095300788986 /* ExpenceViewModel.swift */; };
 		72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426BF243899D2006A61CC /* AppDelegate.swift */; };
 		72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C1243899D2006A61CC /* SceneDelegate.swift */; };
 		72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426C3243899D2006A61CC /* IncomeViewController.swift */; };
@@ -25,7 +30,6 @@
 		72B426D824389D58006A61CC /* Expence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426D724389D58006A61CC /* Expence.swift */; };
 		72B426DA24389DD3006A61CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426D924389DD3006A61CC /* Category.swift */; };
 		72B426DC24389E17006A61CC /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426DB24389E17006A61CC /* Income.swift */; };
-		72B426DE24389F49006A61CC /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426DD24389F49006A61CC /* Balance.swift */; };
 		72B426E12438A22F006A61CC /* IncomeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E02438A22F006A61CC /* IncomeDataProvider.swift */; };
 		72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E22438A344006A61CC /* IncomeViewModel.swift */; };
 		72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E52438A693006A61CC /* IncomeTableViewCell.swift */; };
@@ -56,6 +60,11 @@
 		72811FEA24392626008C2E34 /* CategoryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataProvider.swift; sourceTree = "<group>"; };
 		72811FEC24392683008C2E34 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		72A75EF22439F59E00788986 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		72A75EF4243A070600788986 /* ExpenceDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenceDataProvider.swift; sourceTree = "<group>"; };
+		72A75EF6243A074200788986 /* ExpenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenceViewController.swift; sourceTree = "<group>"; };
+		72A75EF8243A075000788986 /* ExpenceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenceTableViewCell.swift; sourceTree = "<group>"; };
+		72A75EFA243A095300788986 /* ExpenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenceViewModel.swift; sourceTree = "<group>"; };
 		72B426BC243899D2006A61CC /* EasyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B426BF243899D2006A61CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72B426C1243899D2006A61CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +76,6 @@
 		72B426D724389D58006A61CC /* Expence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expence.swift; sourceTree = "<group>"; };
 		72B426D924389DD3006A61CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		72B426DB24389E17006A61CC /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
-		72B426DD24389F49006A61CC /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		72B426E02438A22F006A61CC /* IncomeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDataProvider.swift; sourceTree = "<group>"; };
 		72B426E22438A344006A61CC /* IncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel.swift; sourceTree = "<group>"; };
 		72B426E52438A693006A61CC /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,7 +149,6 @@
 				72B426D724389D58006A61CC /* Expence.swift */,
 				72B426D924389DD3006A61CC /* Category.swift */,
 				72B426DB24389E17006A61CC /* Income.swift */,
-				72B426DD24389F49006A61CC /* Balance.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +162,9 @@
 				72B426E92438AE50006A61CC /* AddButton.swift */,
 				72811FE82439260B008C2E34 /* CategoryViewController.swift */,
 				72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */,
+				72A75EF22439F59E00788986 /* TabBarController.swift */,
+				72A75EF6243A074200788986 /* ExpenceViewController.swift */,
+				72A75EF8243A075000788986 /* ExpenceTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +174,7 @@
 			children = (
 				72B426E22438A344006A61CC /* IncomeViewModel.swift */,
 				72811FEC24392683008C2E34 /* CategoryViewModel.swift */,
+				72A75EFA243A095300788986 /* ExpenceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 			children = (
 				72B426E02438A22F006A61CC /* IncomeDataProvider.swift */,
 				72811FEA24392626008C2E34 /* CategoryDataProvider.swift */,
+				72A75EF4243A070600788986 /* ExpenceDataProvider.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -286,20 +298,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */,
+				72A75EF9243A075000788986 /* ExpenceTableViewCell.swift in Sources */,
 				72B426D824389D58006A61CC /* Expence.swift in Sources */,
 				72811FE92439260B008C2E34 /* CategoryViewController.swift in Sources */,
+				72A75EF32439F59E00788986 /* TabBarController.swift in Sources */,
 				72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */,
 				72663DCC2438D81000F14EFD /* DBManager.swift in Sources */,
 				72B426EA2438AE50006A61CC /* AddButton.swift in Sources */,
 				72B426DA24389DD3006A61CC /* Category.swift in Sources */,
+				72A75EF5243A070600788986 /* ExpenceDataProvider.swift in Sources */,
 				72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */,
 				72B426E12438A22F006A61CC /* IncomeDataProvider.swift in Sources */,
 				72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */,
 				72B426E82438A83E006A61CC /* FormatHelper.swift in Sources */,
+				72A75EF7243A074200788986 /* ExpenceViewController.swift in Sources */,
 				72B426DC24389E17006A61CC /* Income.swift in Sources */,
 				72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */,
-				72B426DE24389F49006A61CC /* Balance.swift in Sources */,
 				72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */,
+				72A75EFB243A095300788986 /* ExpenceViewModel.swift in Sources */,
 				72811FEB24392626008C2E34 /* CategoryDataProvider.swift in Sources */,
 				72811FEF2439277E008C2E34 /* CategoryTableViewCell.swift in Sources */,
 			);

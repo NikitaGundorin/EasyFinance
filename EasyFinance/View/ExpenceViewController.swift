@@ -1,32 +1,32 @@
 //
-//  CategoryViewController.swift
+//  ExpenceViewController.swift
 //  EasyFinance
 //
-//  Created by Никита Гундорин on 04.04.2020.
+//  Created by Никита Гундорин on 05.04.2020.
 //  Copyright © 2020 Nikita Gundorin. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class CategoryViewController: UIViewController {
-    
+class ExpenceViewController: UIViewController {
+    @IBOutlet var dataProvider: ExpenceDataProvider!
+    @IBOutlet weak var paymentScheduleButton: AddButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var dimmerView: UIView!
-    @IBOutlet weak var addTextField: UITextField!
-    @IBOutlet var dataProvider: CategoryDataProvider!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var addButton: AddButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    var viewModel: CategoryViewModel!
+    var viewModel: ExpenceViewModel!
+    var category: Category!
     
     private var itemsToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataProvider.delegate = self
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification,
@@ -41,24 +41,28 @@ class CategoryViewController: UIViewController {
         
         dimmerView.addGestureRecognizer(tap)
         
-        addTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
+        nameTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
+        valueTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
         
-        viewModel = CategoryViewModel()
+        viewModel = ExpenceViewModel(category: category)
         dataProvider.viewModel = viewModel
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        itemsToken = viewModel.categories.observe { [weak tableView] changes in
+        itemsToken = viewModel.expences.observe { [weak tableView] changes in
             guard let tableView = tableView else { return }
             
             switch changes {
             case .initial:
                 break
             case .update(_, let deletions, _, _):
-                if deletions.count == 0 {
-                    tableView.reloadData()
+                if deletions.count > 0 {
+                    let indexPaths = deletions.map{ IndexPath(row: $0, section: 0) }
+                    tableView.deleteRows(at: indexPaths, with: .automatic)
+                }
+                else {
+                     tableView.reloadData()
                 }
             case .error: break
             }
@@ -67,15 +71,13 @@ class CategoryViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
         itemsToken?.invalidate()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
-        let offset = keyboardSize.height - self.tabBarController!.tabBar.frame.size.height
-        self.bottomConstraint.constant = offset
+        self.bottomConstraint.constant = keyboardSize.height
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -88,13 +90,18 @@ class CategoryViewController: UIViewController {
             self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0)
         }, completion: { _ in
             self.view.bringSubviewToFront(self.tableView)
-            self.addTextField.text = ""
+            self.valueTextField.text = ""
+            self.nameTextField.text = ""
             self.addButton.isEnabled = true
         })
     }
     
     @objc func enableAddButton(_ textField: UITextField) {
-        if (addTextField.text != "" && addTextField.text != nil) {
+        if (valueTextField.text != "" &&
+            valueTextField.text != nil &&
+            nameTextField.text != "" &&
+            nameTextField.text != nil) {
+            
             addButton.isEnabled = true
         }
         else {
@@ -102,30 +109,24 @@ class CategoryViewController: UIViewController {
         }
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
-        guard let name = addTextField.text,
-            name != ""
+    @IBAction func paymentScheduleButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        guard let name = nameTextField.text,
+            name != "",
+            let value = valueTextField.text,
+            value != ""
             else {
                 UIView.animate(withDuration: 0.2) {
                     self.view.bringSubviewToFront(self.popupView)
                     self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0.5)
-                    self.addTextField.becomeFirstResponder()
+                    self.nameTextField.becomeFirstResponder()
                     self.addButton.isEnabled = false
                 }
                 return
         }
-        viewModel.addCategory(name: name)
+        viewModel.addExpence(name: name, value: value, category: category)
         dismissKeyboard()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dvc = segue.destination as? ExpenceViewController,
-            let row = tableView.indexPathForSelectedRow?.row
-        else {
-            return
-        }
-        
-        let category = viewModel.categories[row]
-        dvc.category = category
     }
 }

@@ -44,7 +44,7 @@ class CategoryDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         contextualActions.append(action)
         
         let swipeActionsConfiguration = UISwipeActionsConfiguration(actions: contextualActions)
-        swipeActionsConfiguration.performsFirstActionWithFullSwipe = false
+        swipeActionsConfiguration.performsFirstActionWithFullSwipe = true
         
         return swipeActionsConfiguration
     }
@@ -56,5 +56,10 @@ class CategoryDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         alert.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: cancelHandler))
 
         delegate?.present(alert, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.performSegue(withIdentifier: "showExpences", sender: delegate)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -45,4 +45,20 @@ class DBManager {
             realm.delete(category)
         }
     }
+    
+    func getAllExpencesForCategory(category: Category) -> Results<Expence> {
+        return realm.objects(Expence.self).filter("category == %@", category)
+    }
+    
+    func addExpence(expence: Expence) {
+        try! realm.write {
+            realm.add(expence)
+        }
+    }
+    
+    func deleteExpence(expence: Expence) {
+        try! realm.write {
+            realm.delete(expence)
+        }
+    }
 }

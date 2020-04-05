@@ -7,15 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Expence {
-    var value: Float
-    var category: Category
-    var date: Date
-    
-    init(value: Float, category: Category) {
-        self.value = value
-        self.category = category
-        self.date = Date()
-    }
+class Expence: Object {
+    @objc dynamic var name: String = ""
+    @objc dynamic var value: Float = 0
+    @objc dynamic var category: Category? = nil
+    @objc dynamic var date: Date = Date()
 }
