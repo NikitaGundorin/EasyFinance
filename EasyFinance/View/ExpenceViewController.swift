@@ -46,6 +46,7 @@ class ExpenceViewController: UIViewController {
         
         viewModel = ExpenceViewModel(category: category)
         dataProvider.viewModel = viewModel
+        dataProvider.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,14 +58,11 @@ class ExpenceViewController: UIViewController {
             case .initial:
                 break
             case .update(_, let deletions, _, _):
-                if deletions.count > 0 {
-                    let indexPaths = deletions.map{ IndexPath(row: $0, section: 0) }
-                    tableView.deleteRows(at: indexPaths, with: .automatic)
-                }
-                else {
+                if deletions.count == 0 {
                      tableView.reloadData()
                 }
-            case .error: break
+            case .error:
+                break
             }
         }
     }

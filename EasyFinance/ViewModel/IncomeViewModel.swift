@@ -11,9 +11,11 @@ import RealmSwift
 
 class IncomeViewModel {
     var incomes: Results<Income>
-    var balance: String {
-        let total = incomes.map { income in return income.value }.reduce(0, +)
-        return FormatHelper.getFormattedCurrency(value: total)
+    var balance: Balance {
+        return dbManager.getBalance()
+    }
+    var balanceText: String {
+        return FormatHelper.getFormattedCurrency(value: balance.value)
     }
     let dbManager = DBManager.shared
     

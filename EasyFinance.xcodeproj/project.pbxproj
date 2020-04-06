@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7219212A243A767800743B2D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72192129243A767800743B2D /* Balance.swift */; };
 		72663DC42438D7C500F14EFD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC22438D7C500F14EFD /* Realm.framework */; };
 		72663DC52438D7C500F14EFD /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC22438D7C500F14EFD /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72663DC62438D7C500F14EFD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		72192129243A767800743B2D /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		72663DC22438D7C500F14EFD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		72663DC32438D7C500F14EFD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		72663DCB2438D81000F14EFD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				72B426D724389D58006A61CC /* Expence.swift */,
 				72B426D924389DD3006A61CC /* Category.swift */,
 				72B426DB24389E17006A61CC /* Income.swift */,
+				72192129243A767800743B2D /* Balance.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				72B426DC24389E17006A61CC /* Income.swift in Sources */,
 				72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */,
 				72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */,
+				7219212A243A767800743B2D /* Balance.swift in Sources */,
 				72A75EFB243A095300788986 /* ExpenceViewModel.swift in Sources */,
 				72811FEB24392626008C2E34 /* CategoryDataProvider.swift in Sources */,
 				72811FEF2439277E008C2E34 /* CategoryTableViewCell.swift in Sources */,

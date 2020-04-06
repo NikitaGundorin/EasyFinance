@@ -23,6 +23,7 @@ class IncomeViewController: UIViewController {
     var viewModel: IncomeViewModel!
     
     private var itemsToken: NotificationToken?
+    private var balanceToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,8 @@ class IncomeViewController: UIViewController {
         
         viewModel = IncomeViewModel()
         dataProvider.viewModel = viewModel
-        balance.text = viewModel.balance
+        dataProvider.delegate = self
+        balance.text = viewModel.balanceText
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,17 +56,23 @@ class IncomeViewController: UIViewController {
             
             switch changes {
             case .initial:
-                break
+                tableView.reloadData()
             case .update(_, let deletions, _, _):
-                if deletions.count > 0 {
-                    let indexPaths = deletions.map{ IndexPath(row: $0, section: 0) }
-                    tableView.deleteRows(at: indexPaths, with: .automatic)
+                if deletions.count == 0 {
+                    tableView.reloadData()
                 }
-                else {
-                     tableView.reloadData()
-                }
-                self.balance.text = self.viewModel.balance
             case .error: break
+            }
+        }
+        
+        balanceToken = viewModel.balance.observe { change in
+            switch change {
+            case .error(_):
+                break
+            case .change(_):
+                self.balance.text = self.viewModel.balanceText
+            case .deleted:
+                break
             }
         }
     }

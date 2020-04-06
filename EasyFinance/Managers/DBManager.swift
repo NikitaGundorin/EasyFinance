@@ -14,24 +14,57 @@ class DBManager {
     
     let realm = try! Realm()
     
+    func createBalance() -> Balance {
+        let balance = Balance()
+        let incomes = getAllIncomes()
+        let expences = realm.objects(Expence.self)
+        
+        let totalIncome = incomes.map { $0.value }.reduce(0, +)
+        let totalExpence = expences.map { $0.value }.reduce(0, +)
+        
+        balance.value = totalIncome - totalExpence
+        
+        try! realm.write {
+            realm.add(balance)
+        }
+        return balance
+    }
+    
+    func getBalance() -> Balance {
+        guard let balance = realm.objects(Balance.self).first
+            else { return createBalance() }
+
+        return balance
+    }
+    
+    func updateBalance(value: Float) {
+        let balance = getBalance()
+        try! realm.write {
+            balance.value += value
+        }
+    }
+    
     func getAllIncomes() -> Results<Income> {
-        realm.objects(Income.self)
+        realm.objects(Income.self).sorted(byKeyPath: "date", ascending: true)
     }
     
     func addIncome(income: Income) {
         try! realm.write {
             realm.add(income)
         }
+        updateBalance(value: income.value)
     }
     
     func deleteIncome(income: Income) {
+        let value = -income.value
         try! realm.write {
             realm.delete(income)
         }
+        updateBalance(value: value)
     }
     
     func getAllCategories() -> Results<Category> {
-        realm.objects(Category.self)
+        realm.objects(Category.self).sorted(byKeyPath: "name", ascending: true)
     }
     
     func addCategory(category: Category) {
@@ -47,18 +80,21 @@ class DBManager {
     }
     
     func getAllExpencesForCategory(category: Category) -> Results<Expence> {
-        return realm.objects(Expence.self).filter("category == %@", category)
+        return realm.objects(Expence.self).filter("category == %@", category).sorted(byKeyPath: "date", ascending: true)
     }
     
     func addExpence(expence: Expence) {
         try! realm.write {
             realm.add(expence)
         }
+        updateBalance(value: -expence.value)
     }
     
     func deleteExpence(expence: Expence) {
+        let value = expence.value
         try! realm.write {
             realm.delete(expence)
         }
+        updateBalance(value: value)
     }
 }

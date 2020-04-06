@@ -11,6 +11,7 @@ import UIKit
 
 class ExpenceDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     weak var viewModel: ExpenceViewModel!
+    weak var delegate: ExpenceViewController?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.expences.count
@@ -36,8 +37,13 @@ class ExpenceDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate 
         var contextualActions: [UIContextualAction] = []
         
         let action = UIContextualAction(style: .destructive, title: "Удалить") {_,_,completion in
-            self.viewModel.deleteExpence(row: indexPath.row)
-            completion(true)
+            self.showDeleteAlert(deleteHandler: { _ in
+                self.viewModel.deleteExpence(row: indexPath.row)
+                self.delegate?.tableView.deleteRows(at: [indexPath], with: .automatic)
+                completion(true)
+            }, cancelHandler: { _ in
+                completion(false)
+            })
         }
         contextualActions.append(action)
         
@@ -45,5 +51,14 @@ class ExpenceDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate 
         swipeActionsConfiguration.performsFirstActionWithFullSwipe = true
         
         return swipeActionsConfiguration
+    }
+    
+    func showDeleteAlert(deleteHandler: ((UIAlertAction) -> Void)?, cancelHandler: ((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: "Удалить расход?", message: "Вы уверены, что хотите удалить расход? Это действие необратимо", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: deleteHandler))
+        alert.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: cancelHandler))
+
+        delegate?.present(alert, animated: true)
     }
 }
