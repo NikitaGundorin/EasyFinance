@@ -17,7 +17,6 @@
 		72811FEB24392626008C2E34 /* CategoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEA24392626008C2E34 /* CategoryDataProvider.swift */; };
 		72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEC24392683008C2E34 /* CategoryViewModel.swift */; };
 		72811FEF2439277E008C2E34 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */; };
-		72A75EF32439F59E00788986 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EF22439F59E00788986 /* TabBarController.swift */; };
 		72A75EF5243A070600788986 /* ExpenceDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EF4243A070600788986 /* ExpenceDataProvider.swift */; };
 		72A75EF7243A074200788986 /* ExpenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EF6243A074200788986 /* ExpenceViewController.swift */; };
 		72A75EF9243A075000788986 /* ExpenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A75EF8243A075000788986 /* ExpenceTableViewCell.swift */; };
@@ -62,7 +61,6 @@
 		72811FEA24392626008C2E34 /* CategoryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataProvider.swift; sourceTree = "<group>"; };
 		72811FEC24392683008C2E34 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		72A75EF22439F59E00788986 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		72A75EF4243A070600788986 /* ExpenceDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenceDataProvider.swift; sourceTree = "<group>"; };
 		72A75EF6243A074200788986 /* ExpenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenceViewController.swift; sourceTree = "<group>"; };
 		72A75EF8243A075000788986 /* ExpenceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenceTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				72B426E92438AE50006A61CC /* AddButton.swift */,
 				72811FE82439260B008C2E34 /* CategoryViewController.swift */,
 				72811FEE2439277E008C2E34 /* CategoryTableViewCell.swift */,
-				72A75EF22439F59E00788986 /* TabBarController.swift */,
 				72A75EF6243A074200788986 /* ExpenceViewController.swift */,
 				72A75EF8243A075000788986 /* ExpenceTableViewCell.swift */,
 			);
@@ -304,7 +301,6 @@
 				72A75EF9243A075000788986 /* ExpenceTableViewCell.swift in Sources */,
 				72B426D824389D58006A61CC /* Expence.swift in Sources */,
 				72811FE92439260B008C2E34 /* CategoryViewController.swift in Sources */,
-				72A75EF32439F59E00788986 /* TabBarController.swift in Sources */,
 				72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */,
 				72663DCC2438D81000F14EFD /* DBManager.swift in Sources */,
 				72B426EA2438AE50006A61CC /* AddButton.swift in Sources */,
