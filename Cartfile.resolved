@@ -1,1 +1,3 @@
-github "realm/realm-cocoa" "v4.4.0"
+github "danielgindi/Charts" "v3.4.0"
+github "danielgindi/ChartsRealm" "v3.4.0"
+github "realm/realm-cocoa" "v3.21.0"

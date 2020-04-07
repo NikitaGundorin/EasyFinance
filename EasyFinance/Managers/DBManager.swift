@@ -33,7 +33,7 @@ class DBManager {
     func getBalance() -> Balance {
         guard let balance = realm.objects(Balance.self).first
             else { return createBalance() }
-
+        
         return balance
     }
     
@@ -46,6 +46,12 @@ class DBManager {
     
     func getAllIncomes() -> Results<Income> {
         realm.objects(Income.self).sorted(byKeyPath: "date", ascending: true)
+    }
+    
+    func getAllIncomesForInterval(interval: DateInterval) -> Results<Income> {
+        return realm.objects(Income.self)
+            .filter("date >= %@ && date <= %@", interval.start, interval.end)
+            .sorted(byKeyPath: "date", ascending: true)
     }
     
     func addIncome(income: Income) {
@@ -79,8 +85,19 @@ class DBManager {
         }
     }
     
+    func getAllExpences() -> Results<Expence> {
+        realm.objects(Expence.self).sorted(byKeyPath: "date", ascending: true)
+    }
+    
     func getAllExpencesForCategory(category: Category) -> Results<Expence> {
-        return realm.objects(Expence.self).filter("category == %@", category).sorted(byKeyPath: "date", ascending: true)
+        return realm.objects(Expence.self).filter("category == %@", category)
+            .sorted(byKeyPath: "date", ascending: true)
+    }
+    
+    func getAllExpencesForInterval(interval: DateInterval) -> Results<Expence> {
+        return realm.objects(Expence.self)
+            .filter("date >= %@ && date <= %@", interval.start, interval.end)
+            .sorted(byKeyPath: "date", ascending: true)
     }
     
     func addExpence(expence: Expence) {
