@@ -37,7 +37,6 @@
 		72B426E12438A22F006A61CC /* IncomeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E02438A22F006A61CC /* IncomeDataProvider.swift */; };
 		72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E22438A344006A61CC /* IncomeViewModel.swift */; };
 		72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E52438A693006A61CC /* IncomeTableViewCell.swift */; };
-		72B426E82438A83E006A61CC /* FormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E72438A83E006A61CC /* FormatHelper.swift */; };
 		72B426EA2438AE50006A61CC /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B426E92438AE50006A61CC /* AddButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +86,6 @@
 		72B426E02438A22F006A61CC /* IncomeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDataProvider.swift; sourceTree = "<group>"; };
 		72B426E22438A344006A61CC /* IncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel.swift; sourceTree = "<group>"; };
 		72B426E52438A693006A61CC /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
-		72B426E72438A83E006A61CC /* FormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatHelper.swift; sourceTree = "<group>"; };
 		72B426E92438AE50006A61CC /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,7 +197,6 @@
 				72B426C8243899D3006A61CC /* Assets.xcassets */,
 				72B426CA243899D3006A61CC /* LaunchScreen.storyboard */,
 				72B426CD243899D3006A61CC /* Info.plist */,
-				72B426E72438A83E006A61CC /* FormatHelper.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -323,7 +320,6 @@
 				72B426C4243899D2006A61CC /* IncomeViewController.swift in Sources */,
 				72B426E12438A22F006A61CC /* IncomeDataProvider.swift in Sources */,
 				72B426C0243899D2006A61CC /* AppDelegate.swift in Sources */,
-				72B426E82438A83E006A61CC /* FormatHelper.swift in Sources */,
 				72A75EF7243A074200788986 /* ExpenceViewController.swift in Sources */,
 				72B426DC24389E17006A61CC /* Income.swift in Sources */,
 				72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */,
