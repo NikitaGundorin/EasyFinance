@@ -22,8 +22,9 @@ class IncomeDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
                                                        for: indexPath) as? IncomeTableViewCell
             else { return UITableViewCell() }
         
-        let value = viewModel.incomes[indexPath.row].value
-        cell.valueLabel.text = FormatHelper.getFormattedCurrency(value: value)
+        let income = viewModel.incomes[indexPath.row]
+        cell.valueLabel.text = FormatHelper.getFormattedCurrency(value: income.value)
+        cell.dateLabel.text = FormatHelper.getFormattedDate(date: income.date)
         
         return cell
     }

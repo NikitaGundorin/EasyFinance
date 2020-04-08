@@ -86,6 +86,7 @@ class PeriodButtons: UIView {
         delegate?.viewModel.period = .all
         setBorderFor(button: allButton, underline: allButtonUnderline)
         delegate?.setChart()
+        
     }
 }
 

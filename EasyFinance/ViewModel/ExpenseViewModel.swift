@@ -15,10 +15,10 @@ class ExpenseViewModel {
     
     init(category: Category) {
         if category.name == "Все" {
-            expenses = dbManager.getAllExpenses()
+            expenses = dbManager.getAllExpenses(ascending: false)
             return
         }
-        expenses = dbManager.getAllExpensesForCategory(category: category)
+        expenses = dbManager.getAllExpensesForCategory(category: category, ascending: false)
     }
     
     func addExpense(name: String, value: String, category: Category) {

@@ -78,7 +78,8 @@ class ChartViewController: UIViewController, ChartDelegate {
             chart.xAxis.setLabelCount(viewModel.interval.end.weekDay(), force: true)
             chart.xAxis.axisMaximum = viewModel.interval.end.removeTimeStamp().timeIntervalSince1970
         default:
-            chart.xAxis.setLabelCount([incomeEntries.count, expenseEntries.count].max() ?? 6, force: false)
+            let number = [incomeEntries.count, expenseEntries.count].max() ?? 6
+            chart.xAxis.setLabelCount(number, force: false)
             chart.xAxis.resetCustomAxisMax()
         }
     }

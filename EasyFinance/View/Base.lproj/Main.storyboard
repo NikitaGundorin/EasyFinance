@@ -110,19 +110,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200.50 ₽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDk-qJ-0Zy">
-                                                    <rect key="frame" x="20" y="11.666666666666666" width="374" height="20.333333333333336"/>
+                                                    <rect key="frame" x="20" y="11.666666666666666" width="292.66666666666669" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="04.04.20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0u-Fn-YAz">
+                                                    <rect key="frame" x="324.66666666666669" y="11.666666666666666" width="69.333333333333314" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="oDk-qJ-0Zy" firstAttribute="leading" secondItem="Auh-2d-owt" secondAttribute="leadingMargin" id="ls3-63-OMu"/>
-                                                <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="oDk-qJ-0Zy" secondAttribute="trailing" id="n95-on-nlm"/>
-                                                <constraint firstItem="oDk-qJ-0Zy" firstAttribute="centerY" secondItem="Auh-2d-owt" secondAttribute="centerY" id="uni-6C-IGb"/>
+                                                <constraint firstItem="g0u-Fn-YAz" firstAttribute="centerY" secondItem="Auh-2d-owt" secondAttribute="centerY" id="Al6-dA-VZy"/>
+                                                <constraint firstItem="oDk-qJ-0Zy" firstAttribute="leading" secondItem="Auh-2d-owt" secondAttribute="leadingMargin" id="CEx-fi-NhG"/>
+                                                <constraint firstItem="g0u-Fn-YAz" firstAttribute="trailing" secondItem="Auh-2d-owt" secondAttribute="trailingMargin" id="JYs-WO-N6I"/>
+                                                <constraint firstItem="oDk-qJ-0Zy" firstAttribute="centerY" secondItem="Auh-2d-owt" secondAttribute="centerY" id="gw2-Ad-vLo"/>
+                                                <constraint firstItem="g0u-Fn-YAz" firstAttribute="leading" secondItem="oDk-qJ-0Zy" secondAttribute="trailing" constant="12" id="huP-OI-akb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="g0u-Fn-YAz" id="Hjs-x8-ss0"/>
                                             <outlet property="valueLabel" destination="oDk-qJ-0Zy" id="DtH-vE-mcC"/>
                                         </connections>
                                     </tableViewCell>
@@ -602,6 +611,7 @@
                     <navigationItem key="navigationItem" id="wvf-mp-VYP"/>
                     <connections>
                         <outlet property="chart" destination="RS6-h3-1qC" id="8Sx-v8-p51"/>
+                        <outlet property="periodButtons" destination="hUx-AC-Pvu" id="2sq-Nv-ecA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcI-7k-7mf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

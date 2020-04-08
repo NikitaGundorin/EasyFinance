@@ -20,7 +20,7 @@ class IncomeViewModel {
     let dbManager = DBManager.shared
     
     init() {
-        incomes = dbManager.getAllIncomes()
+        incomes = dbManager.getAllIncomes(ascending: false)
     }
     
     func addIncome(value: String) {

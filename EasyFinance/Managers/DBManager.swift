@@ -25,14 +25,14 @@ class DBManager {
         }
     }
     
-    func getAllIncomes() -> Results<Income> {
-        realm.objects(Income.self).sorted(byKeyPath: "date", ascending: true)
+    func getAllIncomes(ascending: Bool = true) -> Results<Income> {
+        realm.objects(Income.self).sorted(byKeyPath: "date", ascending: ascending)
     }
     
     func getAllIncomesForInterval(interval: DateInterval) -> Results<Income> {
         return realm.objects(Income.self)
             .filter("date >= %@ && date <= %@", interval.start, interval.end)
-            .sorted(byKeyPath: "date", ascending: true)
+            .sorted(byKeyPath: "date")
     }
     
     func addIncome(income: Income) {
@@ -79,14 +79,14 @@ class DBManager {
         }
     }
     
-    func getAllExpenses() -> Results<Expense> {
-        realm.objects(Expense.self).sorted(byKeyPath: "date")
+    func getAllExpenses(ascending: Bool = true) -> Results<Expense> {
+        realm.objects(Expense.self).sorted(byKeyPath: "date", ascending: ascending)
     }
     
-    func getAllExpensesForCategory(category: Category) -> Results<Expense> {
+    func getAllExpensesForCategory(category: Category, ascending: Bool = true) -> Results<Expense> {
         if (category.name == "Все") { return getAllExpenses()}
         return realm.objects(Expense.self).filter("category == %@", category)
-            .sorted(byKeyPath: "date")
+            .sorted(byKeyPath: "date", ascending: ascending)
     }
     
     func getAllExpensesForInterval(interval: DateInterval, category: Category? = nil) -> Results<Expense> {
