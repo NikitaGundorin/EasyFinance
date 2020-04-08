@@ -73,14 +73,27 @@ class DBManager {
         realm.objects(Category.self).sorted(byKeyPath: "name").sorted(byKeyPath: "sortOrder")
     }
     
-    func addCategory(category: Category) {
+    func addCategory(category: Category) throws {
+        if realm.objects(Category.self).filter("name == %@", category.name).first != nil {
+            throw DBError.duplicate
+        }
+        
         try! realm.write {
             realm.add(category)
         }
     }
     
     func deleteCategory(category: Category) {
+        guard let otherCategory = realm.objects(Category.self).filter("name == %@", "Другое").first,
+            let allCategory = realm.objects(Category.self).filter("name == %@", "Все").first,
+            category != otherCategory,
+            category != allCategory
+            else { return }
+        let expences = getAllExpencesForCategory(category: category)
         try! realm.write {
+            for expence in expences {
+                expence.category = otherCategory
+            }
             realm.delete(category)
         }
     }
@@ -114,4 +127,8 @@ class DBManager {
         }
         updateBalance(value: value)
     }
+}
+
+enum DBError: Error {
+    case duplicate
 }

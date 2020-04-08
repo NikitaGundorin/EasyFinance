@@ -47,6 +47,8 @@ class ExpenceViewController: UIViewController {
         viewModel = ExpenceViewModel(category: category)
         dataProvider.viewModel = viewModel
         dataProvider.delegate = self
+        
+        navigationItem.title = category.name
     }
     
     override func viewWillAppear(_ animated: Bool) {

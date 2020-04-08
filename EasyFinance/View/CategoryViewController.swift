@@ -114,7 +114,17 @@ class CategoryViewController: UIViewController {
                 }
                 return
         }
-        viewModel.addCategory(name: name)
+        do {
+            try viewModel.addCategory(name: name)
+        }
+        catch {
+            let alert = UIAlertController(title: "Категория существует", message: "Категория с таким названием уже существует, выберите другое имя", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+
+            present(alert, animated: true)
+            return
+        }
         dismissKeyboard()
     }
     

@@ -29,7 +29,7 @@ class CategoryDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        if indexPath.row == viewModel.categories.count - 1 {
+        if indexPath.row == viewModel.categories.count - 1 || indexPath.row == 0 {
             return nil
         }
         var contextualActions: [UIContextualAction] = []

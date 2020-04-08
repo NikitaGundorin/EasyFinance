@@ -17,10 +17,10 @@ class CategoryViewModel {
         categories = dbManager.getAllCategories()
     }
     
-    func addCategory(name: String) {
+    func addCategory(name: String) throws {
         let category = Category()
         category.name = name
-        dbManager.addCategory(category: category)
+        try dbManager.addCategory(category: category)
     }
     
     func deleteCategory(row: Int) {

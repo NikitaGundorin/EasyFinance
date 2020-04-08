@@ -14,6 +14,10 @@ class ExpenceViewModel {
     let dbManager = DBManager.shared
     
     init(category: Category) {
+        if category.name == "Все" {
+            expences = dbManager.getAllExpences()
+            return
+        }
         expences = dbManager.getAllExpencesForCategory(category: category)
     }
     
