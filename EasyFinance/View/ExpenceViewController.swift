@@ -129,4 +129,11 @@ class ExpenceViewController: UIViewController {
         viewModel.addExpence(name: name, value: value, category: category)
         dismissKeyboard()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dvc = segue.destination as? CategoryChartViewController else {
+            return
+        }
+        dvc.category = category
+    }
 }

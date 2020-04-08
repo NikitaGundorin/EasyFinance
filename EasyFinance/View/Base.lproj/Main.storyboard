@@ -627,6 +627,7 @@
                                 <state key="normal" title="График платежей"/>
                                 <connections>
                                     <action selector="paymentScheduleButtonPressed:" destination="STu-1l-pYY" eventType="touchUpInside" id="WjS-7G-p9I"/>
+                                    <segue destination="fle-P3-XDD" kind="show" id="s6X-51-azJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -664,6 +665,147 @@
                 <customObject id="y6P-39-7MR" customClass="ExpenceDataProvider" customModule="EasyFinance" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="4426.0869565217399" y="129.91071428571428"/>
+        </scene>
+        <!--Category Chart View Controller-->
+        <scene sceneID="U9Y-d8-MpT">
+            <objects>
+                <viewController id="fle-P3-XDD" customClass="CategoryChartViewController" customModule="EasyFinance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JbH-Ox-KMq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fLO-Xh-JuB">
+                                <rect key="frame" x="20" y="248" width="374" height="27"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1X8-m7-XY1">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="27"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-K5-ydk">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
+                                                <state key="normal" title="неделя">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekSelected:" destination="fle-P3-XDD" eventType="touchUpInside" id="qRd-zE-bnH"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UO-bH-Sb4">
+                                                <rect key="frame" x="0.0" y="26" width="84" height="1"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Gei-z7-NKq"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gyc-6y-7e5">
+                                        <rect key="frame" x="108.33333333333334" y="0.0" width="75" height="27"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qe-bc-8ER">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
+                                                <state key="normal" title="месяц">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="monthSelected:" destination="fle-P3-XDD" eventType="touchUpInside" id="OPq-oc-ODH"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qz-hX-sHr">
+                                                <rect key="frame" x="0.0" y="26" width="75" height="1"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="HIF-SM-gkQ"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jcj-cb-fvg">
+                                        <rect key="frame" x="207.66666666666666" y="0.0" width="91.999999999999972" height="27"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3o-M1-g5B">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
+                                                <state key="normal" title="квартал">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="quarterSelected:" destination="fle-P3-XDD" eventType="touchUpInside" id="wKM-SO-ZSq"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXD-l4-lAJ">
+                                                <rect key="frame" x="0.0" y="26" width="92" height="1"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="8QY-H1-vwq"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2no-Qq-Sgx">
+                                        <rect key="frame" x="324" y="0.0" width="50" height="27"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dp-fC-qcC">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
+                                                <state key="normal" title="все">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="allSelected:" destination="fle-P3-XDD" eventType="touchUpInside" id="688-rX-xt5"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cic-8H-d0h">
+                                                <rect key="frame" x="0.0" y="26" width="50" height="1"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Hr7-5b-Dr7"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RS6-h3-1qC" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="295" width="374" height="374"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RS6-h3-1qC" secondAttribute="height" multiplier="1:1" id="vyE-Ao-Acy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fLO-Xh-JuB" firstAttribute="top" secondItem="Fh2-yP-TGf" secondAttribute="top" constant="160" id="EaX-7P-jBR"/>
+                            <constraint firstItem="RS6-h3-1qC" firstAttribute="top" secondItem="fLO-Xh-JuB" secondAttribute="bottom" constant="20" id="Jwc-YR-SG0"/>
+                            <constraint firstItem="Fh2-yP-TGf" firstAttribute="trailing" secondItem="fLO-Xh-JuB" secondAttribute="trailing" constant="20" id="Zde-yi-Ncb"/>
+                            <constraint firstItem="Fh2-yP-TGf" firstAttribute="trailing" secondItem="RS6-h3-1qC" secondAttribute="trailing" constant="20" id="emL-eu-6vb"/>
+                            <constraint firstItem="fLO-Xh-JuB" firstAttribute="leading" secondItem="JbH-Ox-KMq" secondAttribute="leading" constant="20" id="iNd-vQ-7Pp"/>
+                            <constraint firstItem="RS6-h3-1qC" firstAttribute="leading" secondItem="JbH-Ox-KMq" secondAttribute="leading" constant="20" id="laC-MP-wja"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fh2-yP-TGf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wvf-mp-VYP"/>
+                    <connections>
+                        <outlet property="allButton" destination="4Dp-fC-qcC" id="J0K-AY-PEA"/>
+                        <outlet property="allButtonUnderline" destination="Cic-8H-d0h" id="8eQ-GK-E51"/>
+                        <outlet property="chart" destination="RS6-h3-1qC" id="8Sx-v8-p51"/>
+                        <outlet property="monthButton" destination="5qe-bc-8ER" id="fiY-pV-pkV"/>
+                        <outlet property="monthButtonUnderline" destination="8Qz-hX-sHr" id="fuq-hh-y74"/>
+                        <outlet property="quarterButton" destination="F3o-M1-g5B" id="Acf-4T-ZO8"/>
+                        <outlet property="quarterButtonUnderline" destination="fXD-l4-lAJ" id="haZ-YB-f6q"/>
+                        <outlet property="weekButton" destination="4lF-K5-ydk" id="s47-Tv-gp9"/>
+                        <outlet property="weekButtonUnderline" destination="7UO-bH-Sb4" id="1Pf-DF-hF2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcI-7k-7mf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5245" y="130"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wag-s0-Zep">

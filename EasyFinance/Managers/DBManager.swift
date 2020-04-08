@@ -103,14 +103,18 @@ class DBManager {
     }
     
     func getAllExpencesForCategory(category: Category) -> Results<Expence> {
+        if (category.name == "Все") { return getAllExpences()}
         return realm.objects(Expence.self).filter("category == %@", category)
             .sorted(byKeyPath: "date")
     }
     
-    func getAllExpencesForInterval(interval: DateInterval) -> Results<Expence> {
-        return realm.objects(Expence.self)
+    func getAllExpencesForInterval(interval: DateInterval, category: Category? = nil) -> Results<Expence> {
+        let result = realm.objects(Expence.self)
             .filter("date >= %@ && date <= %@", interval.start, interval.end)
             .sorted(byKeyPath: "date")
+        guard let category = category else { return result }
+        if (category.name == "Все") { return result }
+        return result.filter("category == %@", category)
     }
     
     func addExpence(expence: Expence) {

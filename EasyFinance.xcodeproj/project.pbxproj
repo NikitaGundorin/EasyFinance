@@ -14,6 +14,8 @@
 		72192131243B575B00743B2D /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72192130243B575B00743B2D /* ChartViewModel.swift */; };
 		725F512A243D175A008784C7 /* FormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F5129243D175A008784C7 /* FormatHelper.swift */; };
 		725F512C243DC1F9008784C7 /* default-v0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 725F512B243DC1F9008784C7 /* default-v0.realm */; };
+		725F97FC243DEEA0006E6328 /* CategoryChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F97FB243DEEA0006E6328 /* CategoryChartViewController.swift */; };
+		725F97FE243DEFE4006E6328 /* CategoryChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F97FD243DEFE4006E6328 /* CategoryChartViewModel.swift */; };
 		72663DC42438D7C500F14EFD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC22438D7C500F14EFD /* Realm.framework */; };
 		72663DC52438D7C500F14EFD /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC22438D7C500F14EFD /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72663DC62438D7C500F14EFD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; };
@@ -65,6 +67,8 @@
 		72192130243B575B00743B2D /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		725F5129243D175A008784C7 /* FormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatHelper.swift; sourceTree = "<group>"; };
 		725F512B243DC1F9008784C7 /* default-v0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0.realm"; sourceTree = "<group>"; };
+		725F97FB243DEEA0006E6328 /* CategoryChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartViewController.swift; sourceTree = "<group>"; };
+		725F97FD243DEFE4006E6328 /* CategoryChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartViewModel.swift; sourceTree = "<group>"; };
 		72663DC22438D7C500F14EFD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		72663DC32438D7C500F14EFD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		72663DCB2438D81000F14EFD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				72A75EF6243A074200788986 /* ExpenceViewController.swift */,
 				72A75EF8243A075000788986 /* ExpenceTableViewCell.swift */,
 				7219212E243B48CA00743B2D /* ChartViewController.swift */,
+				725F97FB243DEEA0006E6328 /* CategoryChartViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				72811FEC24392683008C2E34 /* CategoryViewModel.swift */,
 				72A75EFA243A095300788986 /* ExpenceViewModel.swift */,
 				72192130243B575B00743B2D /* ChartViewModel.swift */,
+				725F97FD243DEFE4006E6328 /* CategoryChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -331,6 +337,8 @@
 				72A75EF7243A074200788986 /* ExpenceViewController.swift in Sources */,
 				72B426DC24389E17006A61CC /* Income.swift in Sources */,
 				72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */,
+				725F97FE243DEFE4006E6328 /* CategoryChartViewModel.swift in Sources */,
+				725F97FC243DEEA0006E6328 /* CategoryChartViewController.swift in Sources */,
 				72B426C2243899D2006A61CC /* SceneDelegate.swift in Sources */,
 				7219212A243A767800743B2D /* Balance.swift in Sources */,
 				72A75EFB243A095300788986 /* ExpenceViewModel.swift in Sources */,
