@@ -12,6 +12,8 @@
 		7219212D243B47D700743B2D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7219212B243B47D700743B2D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7219212F243B48CA00743B2D /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7219212E243B48CA00743B2D /* ChartViewController.swift */; };
 		72192131243B575B00743B2D /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72192130243B575B00743B2D /* ChartViewModel.swift */; };
+		725F512A243D175A008784C7 /* FormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F5129243D175A008784C7 /* FormatHelper.swift */; };
+		725F512C243DC1F9008784C7 /* default-v0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 725F512B243DC1F9008784C7 /* default-v0.realm */; };
 		72663DC42438D7C500F14EFD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC22438D7C500F14EFD /* Realm.framework */; };
 		72663DC52438D7C500F14EFD /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC22438D7C500F14EFD /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72663DC62438D7C500F14EFD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; };
@@ -61,6 +63,8 @@
 		7219212B243B47D700743B2D /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		7219212E243B48CA00743B2D /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		72192130243B575B00743B2D /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		725F5129243D175A008784C7 /* FormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatHelper.swift; sourceTree = "<group>"; };
+		725F512B243DC1F9008784C7 /* default-v0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0.realm"; sourceTree = "<group>"; };
 		72663DC22438D7C500F14EFD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		72663DC32438D7C500F14EFD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		72663DCB2438D81000F14EFD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -192,11 +196,13 @@
 		72B426D624389B03006A61CC /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				725F512B243DC1F9008784C7 /* default-v0.realm */,
 				72B426BF243899D2006A61CC /* AppDelegate.swift */,
 				72B426C1243899D2006A61CC /* SceneDelegate.swift */,
 				72B426C8243899D3006A61CC /* Assets.xcassets */,
 				72B426CA243899D3006A61CC /* LaunchScreen.storyboard */,
 				72B426CD243899D3006A61CC /* Info.plist */,
+				725F5129243D175A008784C7 /* FormatHelper.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 				72B426CC243899D3006A61CC /* LaunchScreen.storyboard in Resources */,
 				72B426C9243899D3006A61CC /* Assets.xcassets in Resources */,
 				72B426C7243899D2006A61CC /* Main.storyboard in Resources */,
+				725F512C243DC1F9008784C7 /* default-v0.realm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +319,7 @@
 				72B426D824389D58006A61CC /* Expence.swift in Sources */,
 				72811FE92439260B008C2E34 /* CategoryViewController.swift in Sources */,
 				72B426E62438A693006A61CC /* IncomeTableViewCell.swift in Sources */,
+				725F512A243D175A008784C7 /* FormatHelper.swift in Sources */,
 				72663DCC2438D81000F14EFD /* DBManager.swift in Sources */,
 				72B426EA2438AE50006A61CC /* AddButton.swift in Sources */,
 				72B426DA24389DD3006A61CC /* Category.swift in Sources */,

@@ -29,6 +29,9 @@ class CategoryDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if indexPath.row == viewModel.categories.count - 1 {
+            return nil
+        }
         var contextualActions: [UIContextualAction] = []
         
         let action = UIContextualAction(style: .destructive, title: "Удалить") { (_, _, completion) in
@@ -50,7 +53,7 @@ class CategoryDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func showDeleteAlert(deleteHandler: ((UIAlertAction) -> Void)?, cancelHandler: ((UIAlertAction) -> Void)?) {
-        let alert = UIAlertController(title: "Удалить категорию?", message: "Вы уверены, что хотите удалить категорию? Все расходы из этой категории будут перенесены в Прочее", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Удалить категорию?", message: "Вы уверены, что хотите удалить категорию? Все расходы из этой категории будут перенесены в Другое", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: deleteHandler))
         alert.addAction(UIAlertAction(title: "Отменить", style: .cancel, handler: cancelHandler))

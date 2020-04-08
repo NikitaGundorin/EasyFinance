@@ -70,7 +70,7 @@ class DBManager {
     }
     
     func getAllCategories() -> Results<Category> {
-        realm.objects(Category.self).sorted(byKeyPath: "name", ascending: true)
+        realm.objects(Category.self).sorted(byKeyPath: "name").sorted(byKeyPath: "sortOrder")
     }
     
     func addCategory(category: Category) {
@@ -86,18 +86,18 @@ class DBManager {
     }
     
     func getAllExpences() -> Results<Expence> {
-        realm.objects(Expence.self).sorted(byKeyPath: "date", ascending: true)
+        realm.objects(Expence.self).sorted(byKeyPath: "date")
     }
     
     func getAllExpencesForCategory(category: Category) -> Results<Expence> {
         return realm.objects(Expence.self).filter("category == %@", category)
-            .sorted(byKeyPath: "date", ascending: true)
+            .sorted(byKeyPath: "date")
     }
     
     func getAllExpencesForInterval(interval: DateInterval) -> Results<Expence> {
         return realm.objects(Expence.self)
             .filter("date >= %@ && date <= %@", interval.start, interval.end)
-            .sorted(byKeyPath: "date", ascending: true)
+            .sorted(byKeyPath: "date")
     }
     
     func addExpence(expence: Expence) {
