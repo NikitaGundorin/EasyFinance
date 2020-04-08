@@ -62,7 +62,7 @@ class CategoryDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.performSegue(withIdentifier: "showExpences", sender: delegate)
+        delegate?.performSegue(withIdentifier: "showExpenses", sender: delegate)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

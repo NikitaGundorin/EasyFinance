@@ -10,10 +10,11 @@ import Foundation
 import RealmSwift
 import Charts
 
-class CategoryChartViewModel {
+class CategoryChartViewModel: ChartViewModelProtocol {
     var dbManager = DBManager.shared
     var category: Category?
-    var expences: Results<Expence>
+    var expenses: Results<Expense>
+    var incomes: Results<Income>? = nil
     var period = ChartPeriod.week {
         didSet {
             setup()
@@ -23,10 +24,10 @@ class CategoryChartViewModel {
     
     init() {
         guard let category = category else {
-            expences = dbManager.getAllExpences()
+            expenses = dbManager.getAllExpenses()
             return
         }
-        expences = dbManager.getAllExpencesForCategory(category: category)
+        expenses = dbManager.getAllExpensesForCategory(category: category)
     }
     
     func setup() {
@@ -41,16 +42,10 @@ class CategoryChartViewModel {
             let startOfQuarter = today.startOfQuarter()
             interval = DateInterval(start: startOfQuarter, end: today)
         case .all:
-            expences = dbManager.getAllExpencesForCategory(category: category!)
+            expenses = dbManager.getAllExpensesForCategory(category: category!)
             return
         }
         
-        expences = dbManager.getAllExpencesForInterval(interval: interval, category: category)
-    }
-}
-
-extension CategoryChartViewModel: IAxisValueFormatter {
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        FormatHelper.getShortFormattedDate(date: Date(timeIntervalSince1970: value))
+        expenses = dbManager.getAllExpensesForInterval(interval: interval, category: category)
     }
 }

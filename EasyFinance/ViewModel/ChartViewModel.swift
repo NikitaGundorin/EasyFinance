@@ -10,20 +10,21 @@ import Foundation
 import RealmSwift
 import Charts
 
-class ChartViewModel {
+class ChartViewModel: ChartViewModelProtocol {
     var dbManager = DBManager.shared
-    var incomes: Results<Income>
-    var expences: Results<Expence>
+    var incomes: Results<Income>?
+    var expenses: Results<Expense>
     var period = ChartPeriod.week {
         didSet {
             setup()
         }
     }
     var interval = DateInterval()
+    var category: Category? = nil
     
     init() {
         incomes = dbManager.getAllIncomes()
-        expences = dbManager.getAllExpences()
+        expenses = dbManager.getAllExpenses()
     }
     
     func setup() {
@@ -39,24 +40,11 @@ class ChartViewModel {
             interval = DateInterval(start: startOfQuarter, end: today)
         case .all:
             incomes = dbManager.getAllIncomes()
-            expences = dbManager.getAllExpences()
+            expenses = dbManager.getAllExpenses()
             return
         }
         
         incomes = dbManager.getAllIncomesForInterval(interval: interval)
-        expences = dbManager.getAllExpencesForInterval(interval: interval)
-    }
-}
-
-enum ChartPeriod {
-    case week
-    case month
-    case quarter
-    case all
-}
-
-extension ChartViewModel: IAxisValueFormatter {
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        FormatHelper.getShortFormattedDate(date: Date(timeIntervalSince1970: value))
+        expenses = dbManager.getAllExpensesForInterval(interval: interval)
     }
 }

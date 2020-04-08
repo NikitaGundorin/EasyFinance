@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PeriodButtons" customModule="EasyFinance" customModuleProvider="target">
+            <connections>
+                <outlet property="allButton" destination="gT6-nw-g7g" id="smC-2Q-Di9"/>
+                <outlet property="allButtonUnderline" destination="JYG-iU-Drq" id="pYZ-ak-rw3"/>
+                <outlet property="monthButton" destination="7Pc-jv-J4i" id="1LF-2h-5jb"/>
+                <outlet property="monthButtonUnderline" destination="Cvf-KW-o6K" id="ri6-u9-8sc"/>
+                <outlet property="quarterButton" destination="zAe-tP-NYc" id="n4Y-DX-dgE"/>
+                <outlet property="quarterButtonUnderline" destination="1eA-0H-Q9k" id="3jO-hr-zlI"/>
+                <outlet property="weekButton" destination="BbG-QN-7Mu" id="Srk-5G-4mZ"/>
+                <outlet property="weekButtonUnderline" destination="F1C-Bl-sds" id="uRZ-3v-q4s"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="q8B-j6-fwe">
+                    <rect key="frame" x="20" y="11.5" width="380" height="27"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dUg-m9-Po5">
+                            <rect key="frame" x="0.0" y="0.0" width="84" height="27"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbG-QN-7Mu">
+                                    <rect key="frame" x="0.0" y="0.0" width="84" height="26"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
+                                    <state key="normal" title="неделя">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="weekSelected:" destination="-1" eventType="touchUpInside" id="95t-pk-UgO"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1C-Bl-sds">
+                                    <rect key="frame" x="0.0" y="26" width="84" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="RDw-D6-I51"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ere-9d-XLV">
+                            <rect key="frame" x="110.5" y="0.0" width="75" height="27"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pc-jv-J4i">
+                                    <rect key="frame" x="0.0" y="0.0" width="75" height="26"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
+                                    <state key="normal" title="месяц">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="monthSelected:" destination="-1" eventType="touchUpInside" id="xYs-W7-yAP"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvf-KW-o6K">
+                                    <rect key="frame" x="0.0" y="26" width="75" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="2RH-5r-CRg"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="q7h-qp-wKe">
+                            <rect key="frame" x="211.5" y="0.0" width="92" height="27"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAe-tP-NYc">
+                                    <rect key="frame" x="0.0" y="0.0" width="92" height="26"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
+                                    <state key="normal" title="квартал">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="quarterSelected:" destination="-1" eventType="touchUpInside" id="FAg-3e-T8t"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eA-0H-Q9k">
+                                    <rect key="frame" x="0.0" y="26" width="92" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="LbV-Lw-PER"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="h4C-BN-0Dr">
+                            <rect key="frame" x="330" y="0.0" width="50" height="27"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gT6-nw-g7g">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="26"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
+                                    <state key="normal" title="все">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="allSelected:" destination="-1" eventType="touchUpInside" id="NUL-IN-oKg"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYG-iU-Drq">
+                                    <rect key="frame" x="0.0" y="26" width="50" height="1"/>
+                                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="xPJ-qY-3XI"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="q8B-j6-fwe" secondAttribute="trailing" constant="20" id="QAw-L3-skA"/>
+                <constraint firstItem="q8B-j6-fwe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="VK2-9H-eoP"/>
+                <constraint firstItem="q8B-j6-fwe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="lAv-pd-FvI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="140.57971014492756" y="350.55803571428572"/>
+        </view>
+    </objects>
+</document>

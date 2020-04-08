@@ -129,7 +129,7 @@ class CategoryViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dvc = segue.destination as? ExpenceViewController,
+        guard let dvc = segue.destination as? ExpenseViewController,
             let row = tableView.indexPathForSelectedRow?.row
         else {
             return

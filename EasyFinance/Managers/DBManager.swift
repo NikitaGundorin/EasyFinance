@@ -13,28 +13,9 @@ class DBManager {
     static var shared = DBManager()
     
     let realm = try! Realm()
-    
-    func createBalance() -> Balance {
-        let balance = Balance()
-        let incomes = getAllIncomes()
-        let expences = realm.objects(Expence.self)
         
-        let totalIncome = incomes.map { $0.value }.reduce(0, +)
-        let totalExpence = expences.map { $0.value }.reduce(0, +)
-        
-        balance.value = totalIncome - totalExpence
-        
-        try! realm.write {
-            realm.add(balance)
-        }
-        return balance
-    }
-    
     func getBalance() -> Balance {
-        guard let balance = realm.objects(Balance.self).first
-            else { return createBalance() }
-        
-        return balance
+        realm.objects(Balance.self).first!
     }
     
     func updateBalance(value: Float) {
@@ -89,27 +70,27 @@ class DBManager {
             category != otherCategory,
             category != allCategory
             else { return }
-        let expences = getAllExpencesForCategory(category: category)
+        let expenses = getAllExpensesForCategory(category: category)
         try! realm.write {
-            for expence in expences {
-                expence.category = otherCategory
+            for expense in expenses {
+                expense.category = otherCategory
             }
             realm.delete(category)
         }
     }
     
-    func getAllExpences() -> Results<Expence> {
-        realm.objects(Expence.self).sorted(byKeyPath: "date")
+    func getAllExpenses() -> Results<Expense> {
+        realm.objects(Expense.self).sorted(byKeyPath: "date")
     }
     
-    func getAllExpencesForCategory(category: Category) -> Results<Expence> {
-        if (category.name == "Все") { return getAllExpences()}
-        return realm.objects(Expence.self).filter("category == %@", category)
+    func getAllExpensesForCategory(category: Category) -> Results<Expense> {
+        if (category.name == "Все") { return getAllExpenses()}
+        return realm.objects(Expense.self).filter("category == %@", category)
             .sorted(byKeyPath: "date")
     }
     
-    func getAllExpencesForInterval(interval: DateInterval, category: Category? = nil) -> Results<Expence> {
-        let result = realm.objects(Expence.self)
+    func getAllExpensesForInterval(interval: DateInterval, category: Category? = nil) -> Results<Expense> {
+        let result = realm.objects(Expense.self)
             .filter("date >= %@ && date <= %@", interval.start, interval.end)
             .sorted(byKeyPath: "date")
         guard let category = category else { return result }
@@ -117,17 +98,17 @@ class DBManager {
         return result.filter("category == %@", category)
     }
     
-    func addExpence(expence: Expence) {
+    func addExpense(expense: Expense) {
         try! realm.write {
-            realm.add(expence)
+            realm.add(expense)
         }
-        updateBalance(value: -expence.value)
+        updateBalance(value: -expense.value)
     }
     
-    func deleteExpence(expence: Expence) {
-        let value = expence.value
+    func deleteExpense(expense: Expense) {
+        let value = expense.value
         try! realm.write {
-            realm.delete(expence)
+            realm.delete(expense)
         }
         updateBalance(value: value)
     }

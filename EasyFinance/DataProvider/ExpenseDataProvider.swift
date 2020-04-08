@@ -1,5 +1,5 @@
 //
-//  ExpenceDataProvider.swift
+//  ExpenseDataProvider.swift
 //  EasyFinance
 //
 //  Created by Никита Гундорин on 05.04.2020.
@@ -9,23 +9,23 @@
 import Foundation
 import UIKit
 
-class ExpenceDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
-    weak var viewModel: ExpenceViewModel!
-    weak var delegate: ExpenceViewController?
+class ExpenseDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
+    weak var viewModel: ExpenseViewModel!
+    weak var delegate: ExpenseViewController?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.expences.count
+        viewModel.expenses.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "expenceCell",
-                                                       for: indexPath) as? ExpenceTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell",
+                                                       for: indexPath) as? ExpenseTableViewCell
             else { return UITableViewCell() }
         
-        let expence = viewModel.expences[indexPath.row]
-        let value = expence.value
-        let name = expence.name
-        let date = expence.date
+        let expense = viewModel.expenses[indexPath.row]
+        let value = expense.value
+        let name = expense.name
+        let date = expense.date
         cell.valueLabel.text = FormatHelper.getFormattedCurrency(value: value)
         cell.namelabel.text = name
         cell.dataLabel.text = FormatHelper.getFormattedDate(date: date)
@@ -38,7 +38,7 @@ class ExpenceDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate 
         
         let action = UIContextualAction(style: .destructive, title: "Удалить") {_,_,completion in
             self.showDeleteAlert(deleteHandler: { _ in
-                self.viewModel.deleteExpence(row: indexPath.row)
+                self.viewModel.deleteExpense(row: indexPath.row)
                 self.delegate?.tableView.deleteRows(at: [indexPath], with: .automatic)
                 completion(true)
             }, cancelHandler: { _ in

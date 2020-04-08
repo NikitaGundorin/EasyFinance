@@ -1,5 +1,5 @@
 //
-//  ExpenceViewController.swift
+//  ExpenseViewController.swift
 //  EasyFinance
 //
 //  Created by Никита Гундорин on 05.04.2020.
@@ -9,8 +9,8 @@
 import UIKit
 import RealmSwift
 
-class ExpenceViewController: UIViewController {
-    @IBOutlet var dataProvider: ExpenceDataProvider!
+class ExpenseViewController: UIViewController {
+    @IBOutlet var dataProvider: ExpenseDataProvider!
     @IBOutlet weak var paymentScheduleButton: AddButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var popupView: UIView!
@@ -20,7 +20,7 @@ class ExpenceViewController: UIViewController {
     @IBOutlet weak var addButton: AddButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    var viewModel: ExpenceViewModel!
+    var viewModel: ExpenseViewModel!
     var category: Category!
     
     private var itemsToken: NotificationToken?
@@ -44,7 +44,7 @@ class ExpenceViewController: UIViewController {
         nameTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
         valueTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
         
-        viewModel = ExpenceViewModel(category: category)
+        viewModel = ExpenseViewModel(category: category)
         dataProvider.viewModel = viewModel
         dataProvider.delegate = self
         
@@ -53,7 +53,7 @@ class ExpenceViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        itemsToken = viewModel.expences.observe { [weak tableView] changes in
+        itemsToken = viewModel.expenses.observe { [weak tableView] changes in
             guard let tableView = tableView else { return }
             
             switch changes {
@@ -126,7 +126,7 @@ class ExpenceViewController: UIViewController {
                 }
                 return
         }
-        viewModel.addExpence(name: name, value: value, category: category)
+        viewModel.addExpense(name: name, value: value, category: category)
         dismissKeyboard()
     }
     

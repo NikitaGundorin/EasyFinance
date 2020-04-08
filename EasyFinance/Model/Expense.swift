@@ -1,5 +1,5 @@
 //
-//  Expence.swift
+//  Expense.swift
 //  EasyFinance
 //
 //  Created by Никита Гундорин on 04.04.2020.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Expence: Object {
+class Expense: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var value: Float = 0
     @objc dynamic var category: Category? = nil

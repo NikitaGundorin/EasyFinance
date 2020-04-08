@@ -1,5 +1,5 @@
 //
-//  ExpenceTableViewCell.swift
+//  ExpenseTableViewCell.swift
 //  EasyFinance
 //
 //  Created by Никита Гундорин on 05.04.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpenceTableViewCell: UITableViewCell {
+class ExpenseTableViewCell: UITableViewCell {
     @IBOutlet weak var namelabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
