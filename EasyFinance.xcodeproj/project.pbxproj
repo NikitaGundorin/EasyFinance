@@ -24,6 +24,7 @@
 		72663DC62438D7C500F14EFD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; };
 		72663DC72438D7C500F14EFD /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72663DC32438D7C500F14EFD /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72663DCC2438D81000F14EFD /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72663DCB2438D81000F14EFD /* DBManager.swift */; };
+		727CD11D243F24FC009A25DE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CD11C243F24FC009A25DE /* SplashViewController.swift */; };
 		72811FE92439260B008C2E34 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FE82439260B008C2E34 /* CategoryViewController.swift */; };
 		72811FEB24392626008C2E34 /* CategoryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEA24392626008C2E34 /* CategoryDataProvider.swift */; };
 		72811FED24392683008C2E34 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72811FEC24392683008C2E34 /* CategoryViewModel.swift */; };
@@ -79,6 +80,7 @@
 		72663DC22438D7C500F14EFD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		72663DC32438D7C500F14EFD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		72663DCB2438D81000F14EFD /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		727CD11C243F24FC009A25DE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		72811FE82439260B008C2E34 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		72811FEA24392626008C2E34 /* CategoryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataProvider.swift; sourceTree = "<group>"; };
 		72811FEC24392683008C2E34 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				72A75EF8243A075000788986 /* ExpenseTableViewCell.swift */,
 				7219212E243B48CA00743B2D /* ChartViewController.swift */,
 				725F97FB243DEEA0006E6328 /* CategoryChartViewController.swift */,
+				727CD11C243F24FC009A25DE /* SplashViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727CD11D243F24FC009A25DE /* SplashViewController.swift in Sources */,
 				72B426E32438A344006A61CC /* IncomeViewModel.swift in Sources */,
 				72A75EF9243A075000788986 /* ExpenseTableViewCell.swift in Sources */,
 				72B426D824389D58006A61CC /* Expense.swift in Sources */,
