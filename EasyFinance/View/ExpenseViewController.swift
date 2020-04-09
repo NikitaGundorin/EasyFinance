@@ -11,7 +11,6 @@ import RealmSwift
 
 class ExpenseViewController: UIViewController {
     @IBOutlet var dataProvider: ExpenseDataProvider!
-    @IBOutlet weak var paymentScheduleButton: AddButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var dimmerView: UIView!
@@ -19,6 +18,7 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var addButton: AddButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var paymentChartButton: AddButton!
     
     var viewModel: ExpenseViewModel!
     var category: Category!
@@ -90,6 +90,7 @@ class ExpenseViewController: UIViewController {
             self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0)
         }, completion: { _ in
             self.view.bringSubviewToFront(self.tableView)
+            self.view.bringSubviewToFront(self.paymentChartButton)
             self.valueTextField.text = ""
             self.nameTextField.text = ""
             self.addButton.isEnabled = true
@@ -107,9 +108,6 @@ class ExpenseViewController: UIViewController {
         else {
             addButton.isEnabled = false
         }
-    }
-    
-    @IBAction func paymentScheduleButtonPressed(_ sender: Any) {
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {

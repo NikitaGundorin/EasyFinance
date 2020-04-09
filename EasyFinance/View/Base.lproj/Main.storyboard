@@ -535,7 +535,6 @@
                                 <rect key="frame" x="20" y="108" width="374" height="48"/>
                                 <state key="normal" title="График платежей"/>
                                 <connections>
-                                    <action selector="paymentScheduleButtonPressed:" destination="STu-1l-pYY" eventType="touchUpInside" id="WjS-7G-p9I"/>
                                     <segue destination="fle-P3-XDD" kind="show" id="s6X-51-azJ"/>
                                 </connections>
                             </button>
@@ -564,7 +563,7 @@
                         <outlet property="dataProvider" destination="y6P-39-7MR" id="zhx-bQ-zo3"/>
                         <outlet property="dimmerView" destination="Bv7-lC-CHt" id="CsU-F6-dan"/>
                         <outlet property="nameTextField" destination="UKT-TF-1Rq" id="cf8-d3-RPn"/>
-                        <outlet property="paymentScheduleButton" destination="eAU-Ae-URy" id="l8M-uK-TkI"/>
+                        <outlet property="paymentChartButton" destination="eAU-Ae-URy" id="J2Z-Ff-Fuy"/>
                         <outlet property="popupView" destination="ZNs-p0-M43" id="WcS-3A-UPW"/>
                         <outlet property="tableView" destination="vAS-9f-cFk" id="PzC-z7-qcS"/>
                         <outlet property="valueTextField" destination="G7r-Er-RzY" id="bxd-2I-RvP"/>
