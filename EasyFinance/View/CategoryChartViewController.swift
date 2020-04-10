@@ -46,7 +46,7 @@ class CategoryChartViewController: UIViewController, ChartDelegate {
             expenseEntries.append(expenseEntry)
         }
         
-        let expenseChartDataSet = LineChartDataSet(entries: expenseEntries, label: "Расходы")
+        let expenseChartDataSet = LineChartDataSet(entries: expenseEntries, label: "")
         expenseChartDataSet.colors = [UIColor.systemRed]
         expenseChartDataSet.circleColors = [UIColor.systemGray]
         expenseChartDataSet.circleHoleColor = UIColor.systemGray3

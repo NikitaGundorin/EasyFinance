@@ -1,0 +1,81 @@
+/* Class = "UILabel"; text = "Incomes"; ObjectID = "0lJ-bK-knG"; */
+"0lJ-bK-knG.text" = "Доходы";
+
+/* Class = "UIButton"; normalTitle = "Add income"; ObjectID = "8Jn-hi-0NI"; */
+"8Jn-hi-0NI.normalTitle" = "Добавить доход";
+
+/* Class = "UITabBarItem"; title = "Chart"; ObjectID = "9iu-Ue-71J"; */
+"9iu-Ue-71J.title" = "График";
+
+/* Class = "UITabBarItem"; title = "Incomes"; ObjectID = "14O-kO-PJv"; */
+"14O-kO-PJv.title" = "Доходы";
+
+/* Class = "UILabel"; text = "Current balance"; ObjectID = "bc4-2w-sM6"; */
+"bc4-2w-sM6.text" = "Текущий баланс";
+
+/* Class = "UILabel"; text = "05.04.20"; ObjectID = "Bcc-ro-8bt"; */
+"Bcc-ro-8bt.text" = "05.04.20";
+
+/* Class = "UILabel"; text = "When"; ObjectID = "Dje-69-LS2"; */
+"Dje-69-LS2.text" = "Когда";
+
+/* Class = "UIButton"; normalTitle = "Payments chart"; ObjectID = "eAU-Ae-URy"; */
+"eAU-Ae-URy.normalTitle" = "График платежей";
+
+/* Class = "UILabel"; text = "04.04.20"; ObjectID = "g0u-Fn-YAz"; */
+"g0u-Fn-YAz.text" = "04.04.20";
+
+/* Class = "UITextField"; placeholder = "Amount"; ObjectID = "G7r-Er-RzY"; */
+"G7r-Er-RzY.placeholder" = "Сумма";
+
+/* Class = "UILabel"; text = "$100 000.00"; ObjectID = "GEH-vc-Q2b"; */
+"GEH-vc-Q2b.text" = "$100 000.00";
+
+/* Class = "UIButton"; normalTitle = "Add expenses category"; ObjectID = "Hxj-wk-Iah"; */
+"Hxj-wk-Iah.normalTitle" = "Добавить категорию расходов";
+
+/* Class = "UILabel"; text = "$0"; ObjectID = "iK4-PX-TJ9"; */
+"iK4-PX-TJ9.text" = "$0";
+
+/* Class = "UITabBarItem"; title = "Expenses"; ObjectID = "KOT-n2-4vR"; */
+"KOT-n2-4vR.title" = "Расходы";
+
+/* Class = "UILabel"; text = "Expenses"; ObjectID = "Lr8-B6-X6M"; */
+"Lr8-B6-X6M.text" = "Расходы";
+
+/* Class = "UILabel"; text = "How much"; ObjectID = "Nhh-PP-3v1"; */
+"Nhh-PP-3v1.text" = "Сколько";
+
+/* Class = "UILabel"; text = "$200.50"; ObjectID = "oDk-qJ-0Zy"; */
+"oDk-qJ-0Zy.text" = "$200.50";
+
+/* Class = "UITextField"; placeholder = "Amount"; ObjectID = "Oer-M1-sFI"; */
+"Oer-M1-sFI.placeholder" = "Сумма";
+
+/* Class = "UILabel"; text = "Gas"; ObjectID = "rjP-4Q-Fmr"; */
+"rjP-4Q-Fmr.text" = "Gas";
+
+/* Class = "UILabel"; text = "For what"; ObjectID = "t98-Qb-ohy"; */
+"t98-Qb-ohy.text" = "На что";
+
+/* Class = "UILabel"; text = "Incomes"; ObjectID = "tL4-dw-5Q1"; */
+"tL4-dw-5Q1.text" = "Доходы";
+
+/* Class = "UIButton"; normalTitle = "Add expense"; ObjectID = "TP4-lQ-e3S"; */
+"TP4-lQ-e3S.normalTitle" = "Добавить расход";
+
+/* Class = "UILabel"; text = "Expenses"; ObjectID = "Uga-6k-mBG"; */
+"Uga-6k-mBG.text" = "Расходы";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "UKT-TF-1Rq"; */
+"UKT-TF-1Rq.placeholder" = "Наименование";
+
+/* Class = "UINavigationItem"; title = "Categories"; ObjectID = "XQK-dc-CBh"; */
+"XQK-dc-CBh.title" = "Категории";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "xzS-TH-TSV"; */
+"xzS-TH-TSV.placeholder" = "Наименование";
+
+/* Class = "UILabel"; text = "Other"; ObjectID = "ypL-xJ-t66"; */
+"ypL-xJ-t66.text" = "Другое";
+

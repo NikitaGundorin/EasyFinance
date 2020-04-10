@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setUpRealm() {
-        let bundlePath = Bundle.main.path(forResource: "default-v0", ofType: "realm")!
+        let languageCode = FormatHelper.getLanguageCode()
+        let bundlePath = Bundle.main.path(forResource: "default-v0-\(languageCode)", ofType: "realm")!
         let defaultPath = Realm.Configuration.defaultConfiguration.fileURL!.path
         let fileManager = FileManager.default
 

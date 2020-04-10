@@ -35,7 +35,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="84" height="26"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
-                                    <state key="normal" title="неделя">
+                                    <state key="normal" title="week">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>
@@ -58,7 +58,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="75" height="26"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
-                                    <state key="normal" title="месяц">
+                                    <state key="normal" title="month">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>
@@ -81,7 +81,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="92" height="26"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
-                                    <state key="normal" title="квартал">
+                                    <state key="normal" title="quarter">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>
@@ -104,7 +104,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="26"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <inset key="contentEdgeInsets" minX="6" minY="-3" maxX="6" maxY="2"/>
-                                    <state key="normal" title="все">
+                                    <state key="normal" title="all">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>

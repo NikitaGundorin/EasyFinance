@@ -36,6 +36,15 @@ class PeriodButtons: UIView {
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        let week = NSLocalizedString("week", comment: "week button label")
+        let month = NSLocalizedString("month", comment: "month button label")
+        let quarter = NSLocalizedString("quarter", comment: "quarter button label")
+        let all = NSLocalizedString("all", comment: "all button label")
+        
+        weekButton.setTitle(week, for: .normal)
+        monthButton.setTitle(month, for: .normal)
+        quarterButton.setTitle(quarter, for: .normal)
+        allButton.setTitle(all, for: .normal)
         setBorderFor(button: weekButton, underline: weekButtonUnderline)
     }
     

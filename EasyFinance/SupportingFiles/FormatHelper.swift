@@ -9,6 +9,8 @@
 import Foundation
 
 class FormatHelper {
+    static let supportingLanguages = ["en", "ru"]
+    
     static func getFormattedCurrency(value: Float) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.groupingSeparator = " "
@@ -23,18 +25,29 @@ class FormatHelper {
         return "\(result) ₽"
     }
     
-    static func getFormattedDate(date: Date) -> String {
-        let format = "dd.MM.yy"
+    static func getFormattedDate(date: Date, short: Bool = false) -> String {
+        let template = short ? "dd.MM" : "dd.MM.yy"
         let dateformat = DateFormatter()
-        dateformat.dateFormat = format
+        let localFormat = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: Locale.current)
+        dateformat.dateFormat = localFormat
         return dateformat.string(from: date)
     }
     
-    static func getShortFormattedDate(date: Date) -> String {
-        let format = "dd.MM"
-        let dateformat = DateFormatter()
-        dateformat.dateFormat = format
-        return dateformat.string(from: date)
+    static func getLanguageCode() -> String {
+        var locale: Locale
+        if let preferredIdentifier = Locale.preferredLanguages.first {
+            locale = Locale(identifier: preferredIdentifier)
+
+        } else {
+            locale = Locale.current
+        }
+        
+        if let languageCode = locale.languageCode,
+            supportingLanguages.contains(languageCode) {
+            return languageCode
+        }
+        
+        return "en"
     }
 }
 

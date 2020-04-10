@@ -118,9 +118,12 @@ class CategoryViewController: UIViewController {
             try viewModel.addCategory(name: name)
         }
         catch {
-            let alert = UIAlertController(title: "Категория существует", message: "Категория с таким названием уже существует, выберите другое имя", preferredStyle: .alert)
+            let title = NSLocalizedString("Category already exists", comment: "Category alert title")
+            let message = NSLocalizedString("A category with the same name already exists, select a different name", comment: "Category alert message")
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+            let ok = NSLocalizedString("Ok", comment: "Ok alert action")
+            alert.addAction(UIAlertAction(title: ok, style: .default, handler: nil))
 
             present(alert, animated: true)
             return

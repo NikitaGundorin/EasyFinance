@@ -48,7 +48,7 @@ class ChartViewController: UIViewController, ChartDelegate {
             incomeEntries.append(incomeEntry)
         }
         
-        let incomesChartDataSet = LineChartDataSet(entries: incomeEntries, label: "Доходы")
+        let incomesChartDataSet = LineChartDataSet(entries: incomeEntries, label: "")
         incomesChartDataSet.colors = [UIColor.systemGreen]
         incomesChartDataSet.circleColors = [UIColor.systemGray]
         incomesChartDataSet.circleHoleColor = UIColor.systemGray3
@@ -64,7 +64,7 @@ class ChartViewController: UIViewController, ChartDelegate {
             expenseEntries.append(expenseEntry)
         }
         
-        let expenseChartDataSet = LineChartDataSet(entries: expenseEntries, label: "Расходы")
+        let expenseChartDataSet = LineChartDataSet(entries: expenseEntries, label: "")
         expenseChartDataSet.colors = [UIColor.systemRed]
         expenseChartDataSet.circleColors = [UIColor.systemGray]
         expenseChartDataSet.circleHoleColor = UIColor.systemGray3

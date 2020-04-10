@@ -1,0 +1,51 @@
+/* Category alert message */
+"A category with the same name already exists, select a different name" = "Категория с таким названием уже существует, выберите другое имя";
+
+/* all button label */
+"all" = "все";
+
+/* Cancel action for category alert
+   Cancel action for expense alert */
+"Cancel" = "Отменить";
+
+/* Category alert title */
+"Category already exists" = "Категория уже существует";
+
+/* Delete action for category alert
+   Delete action for cell
+   Delete action for expense alert */
+"Delete" = "Удалить";
+
+/* Delete category alert title */
+"Delete category?" = "Удалить категорию?";
+
+/* Delete expense alert title */
+"Delete expense?" = "Удалить расход";
+
+/* Delete income alert title */
+"Delete income?" = "Удалить доход?";
+
+/* month button label */
+"month" = "месяц";
+
+/* No data text chart */
+"No data for selected period" = "Нет данных за выбранный период";
+
+/* Ok alert action */
+"Ok" = "Ок";
+
+/* quarter button label */
+"quarter" = "квартал";
+
+/* Delete expense alert message */
+"This category will be deleted. All expenses from this category will be transferred to Other." = "Вы уверены, что хотите удалить категорию? Все расходы из этой категории будут перенесены в Другое";
+
+/* Delete expense alert message */
+"This expense will be deleted. This action cannot be undone." = "Вы уверены, что хотите удалить расход? Это действие необратимо.";
+
+/* Delete income alert message */
+"This income will be deleted. This action cannot be undone." = "Вы уверены, что хотите удалить доход? Это действие необратимо";
+
+/* week button label */
+"week" = "неделя";
+

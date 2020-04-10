@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="EasyFinance/SupportingFiles/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>EasyFinance</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="EasyFinance/SupportingFiles/en.lproj/Localizable.strings" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
+    </header>
+    <body>
+      <trans-unit id="A category with the same name already exists, select a different name" xml:space="preserve">
+        <source>A category with the same name already exists, select a different name</source>
+        <target>Категория с таким названием уже существует, выберите другое имя</target>
+        <note>Category alert message</note>
+      </trans-unit>
+      <trans-unit id="Cancel" xml:space="preserve">
+        <source>Cancel</source>
+        <target>Отменить</target>
+        <note>Cancel action for category alert
+   Cancel action for expense alert</note>
+      </trans-unit>
+      <trans-unit id="Category already exists" xml:space="preserve">
+        <source>Category already exists</source>
+        <target>Категория уже существует</target>
+        <note>Category alert title</note>
+      </trans-unit>
+      <trans-unit id="Delete" xml:space="preserve">
+        <source>Delete</source>
+        <target>Удалить</target>
+        <note>Delete action for category alert
+   Delete action for cell
+   Delete action for expense alert</note>
+      </trans-unit>
+      <trans-unit id="Delete category?" xml:space="preserve">
+        <source>Delete category?</source>
+        <target>Удалить категорию?</target>
+        <note>Delete category alert title</note>
+      </trans-unit>
+      <trans-unit id="Delete expense?" xml:space="preserve">
+        <source>Delete expense?</source>
+        <target>Удалить расход</target>
+        <note>Delete expense alert title</note>
+      </trans-unit>
+      <trans-unit id="Delete income?" xml:space="preserve">
+        <source>Delete income?</source>
+        <target>Удалить доход?</target>
+        <note>Delete income alert title</note>
+      </trans-unit>
+      <trans-unit id="No data for selected period" xml:space="preserve">
+        <source>No data for selected period</source>
+        <target>Нет данных за выбранный период</target>
+        <note>No data text chart</note>
+      </trans-unit>
+      <trans-unit id="Ok" xml:space="preserve">
+        <source>Ok</source>
+        <target>Ок</target>
+        <note>Ok alert action</note>
+      </trans-unit>
+      <trans-unit id="This category will be deleted. All expenses from this category will be transferred to Other." xml:space="preserve">
+        <source>This category will be deleted. All expenses from this category will be transferred to Other.</source>
+        <target>Вы уверены, что хотите удалить категорию? Все расходы из этой категории будут перенесены в Другое</target>
+        <note>Delete expense alert message</note>
+      </trans-unit>
+      <trans-unit id="This expense will be deleted. This action cannot be undone." xml:space="preserve">
+        <source>This expense will be deleted. This action cannot be undone.</source>
+        <target>Вы уверены, что хотите удалить расход? Это действие необратимо.</target>
+        <note>Delete expense alert message</note>
+      </trans-unit>
+      <trans-unit id="This income will be deleted. This action cannot be undone." xml:space="preserve">
+        <source>This income will be deleted. This action cannot be undone.</source>
+        <target>Вы уверены, что хотите удалить доход? Это действие необратимо</target>
+        <note>Delete income alert message</note>
+      </trans-unit>
+      <trans-unit id="all" xml:space="preserve">
+        <source>all</source>
+        <target>все</target>
+        <note>all button label</note>
+      </trans-unit>
+      <trans-unit id="month" xml:space="preserve">
+        <source>month</source>
+        <target>месяц</target>
+        <note>month button label</note>
+      </trans-unit>
+      <trans-unit id="quarter" xml:space="preserve">
+        <source>quarter</source>
+        <target>квартал</target>
+        <note>quarter button label</note>
+      </trans-unit>
+      <trans-unit id="week" xml:space="preserve">
+        <source>week</source>
+        <target>неделя</target>
+        <note>week button label</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="EasyFinance/View/Base.lproj/Main.storyboard" source-language="en" target-language="ru" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.4" build-num="11E146"/>
+    </header>
+    <body>
+      <trans-unit id="0lJ-bK-knG.text" xml:space="preserve">
+        <source>Incomes</source>
+        <target>Доходы</target>
+        <note>Class = "UILabel"; text = "Incomes"; ObjectID = "0lJ-bK-knG";</note>
+      </trans-unit>
+      <trans-unit id="8Jn-hi-0NI.normalTitle" xml:space="preserve">
+        <source>Add income</source>
+        <target>Добавить доход</target>
+        <note>Class = "UIButton"; normalTitle = "Add income"; ObjectID = "8Jn-hi-0NI";</note>
+      </trans-unit>
+      <trans-unit id="9iu-Ue-71J.title" xml:space="preserve">
+        <source>Chart</source>
+        <target>График</target>
+        <note>Class = "UITabBarItem"; title = "Chart"; ObjectID = "9iu-Ue-71J";</note>
+      </trans-unit>
+      <trans-unit id="14O-kO-PJv.title" xml:space="preserve">
+        <source>Incomes</source>
+        <target>Доходы</target>
+        <note>Class = "UITabBarItem"; title = "Incomes"; ObjectID = "14O-kO-PJv";</note>
+      </trans-unit>
+      <trans-unit id="Bcc-ro-8bt.text" xml:space="preserve">
+        <source>05.04.20</source>
+        <target>05.04.20</target>
+        <note>Class = "UILabel"; text = "05.04.20"; ObjectID = "Bcc-ro-8bt";</note>
+      </trans-unit>
+      <trans-unit id="Dje-69-LS2.text" xml:space="preserve">
+        <source>When</source>
+        <target>Когда</target>
+        <note>Class = "UILabel"; text = "When"; ObjectID = "Dje-69-LS2";</note>
+      </trans-unit>
+      <trans-unit id="G7r-Er-RzY.placeholder" xml:space="preserve">
+        <source>Amount</source>
+        <target>Сумма</target>
+        <note>Class = "UITextField"; placeholder = "Amount"; ObjectID = "G7r-Er-RzY";</note>
+      </trans-unit>
+      <trans-unit id="GEH-vc-Q2b.text" xml:space="preserve">
+        <source>$100 000.00</source>
+        <target>$100 000.00</target>
+        <note>Class = "UILabel"; text = "$100 000.00"; ObjectID = "GEH-vc-Q2b";</note>
+      </trans-unit>
+      <trans-unit id="Hxj-wk-Iah.normalTitle" xml:space="preserve">
+        <source>Add expenses category</source>
+        <target>Добавить категорию расходов</target>
+        <note>Class = "UIButton"; normalTitle = "Add expenses category"; ObjectID = "Hxj-wk-Iah";</note>
+      </trans-unit>
+      <trans-unit id="KOT-n2-4vR.title" xml:space="preserve">
+        <source>Expenses</source>
+        <target>Расходы</target>
+        <note>Class = "UITabBarItem"; title = "Expenses"; ObjectID = "KOT-n2-4vR";</note>
+      </trans-unit>
+      <trans-unit id="Lr8-B6-X6M.text" xml:space="preserve">
+        <source>Expenses</source>
+        <target>Расходы</target>
+        <note>Class = "UILabel"; text = "Expenses"; ObjectID = "Lr8-B6-X6M";</note>
+      </trans-unit>
+      <trans-unit id="Nhh-PP-3v1.text" xml:space="preserve">
+        <source>How much</source>
+        <target>Сколько</target>
+        <note>Class = "UILabel"; text = "How much"; ObjectID = "Nhh-PP-3v1";</note>
+      </trans-unit>
+      <trans-unit id="Oer-M1-sFI.placeholder" xml:space="preserve">
+        <source>Amount</source>
+        <target>Сумма</target>
+        <note>Class = "UITextField"; placeholder = "Amount"; ObjectID = "Oer-M1-sFI";</note>
+      </trans-unit>
+      <trans-unit id="TP4-lQ-e3S.normalTitle" xml:space="preserve">
+        <source>Add expense</source>
+        <target>Добавить расход</target>
+        <note>Class = "UIButton"; normalTitle = "Add expense"; ObjectID = "TP4-lQ-e3S";</note>
+      </trans-unit>
+      <trans-unit id="UKT-TF-1Rq.placeholder" xml:space="preserve">
+        <source>Name</source>
+        <target>Наименование</target>
+        <note>Class = "UITextField"; placeholder = "Name"; ObjectID = "UKT-TF-1Rq";</note>
+      </trans-unit>
+      <trans-unit id="Uga-6k-mBG.text" xml:space="preserve">
+        <source>Expenses</source>
+        <target>Расходы</target>
+        <note>Class = "UILabel"; text = "Expenses"; ObjectID = "Uga-6k-mBG";</note>
+      </trans-unit>
+      <trans-unit id="XQK-dc-CBh.title" xml:space="preserve">
+        <source>Categories</source>
+        <target>Категории</target>
+        <note>Class = "UINavigationItem"; title = "Categories"; ObjectID = "XQK-dc-CBh";</note>
+      </trans-unit>
+      <trans-unit id="bc4-2w-sM6.text" xml:space="preserve">
+        <source>Current balance</source>
+        <target>Текущий баланс</target>
+        <note>Class = "UILabel"; text = "Current balance"; ObjectID = "bc4-2w-sM6";</note>
+      </trans-unit>
+      <trans-unit id="eAU-Ae-URy.normalTitle" xml:space="preserve">
+        <source>Payments chart</source>
+        <target>График платежей</target>
+        <note>Class = "UIButton"; normalTitle = "Payments chart"; ObjectID = "eAU-Ae-URy";</note>
+      </trans-unit>
+      <trans-unit id="g0u-Fn-YAz.text" xml:space="preserve">
+        <source>04.04.20</source>
+        <target>04.04.20</target>
+        <note>Class = "UILabel"; text = "04.04.20"; ObjectID = "g0u-Fn-YAz";</note>
+      </trans-unit>
+      <trans-unit id="iK4-PX-TJ9.text" xml:space="preserve">
+        <source>$0</source>
+        <target>$0</target>
+        <note>Class = "UILabel"; text = "$0"; ObjectID = "iK4-PX-TJ9";</note>
+      </trans-unit>
+      <trans-unit id="oDk-qJ-0Zy.text" xml:space="preserve">
+        <source>$200.50</source>
+        <target>$200.50</target>
+        <note>Class = "UILabel"; text = "$200.50"; ObjectID = "oDk-qJ-0Zy";</note>
+      </trans-unit>
+      <trans-unit id="rjP-4Q-Fmr.text" xml:space="preserve">
+        <source>Gas</source>
+        <target>Gas</target>
+        <note>Class = "UILabel"; text = "Gas"; ObjectID = "rjP-4Q-Fmr";</note>
+      </trans-unit>
+      <trans-unit id="t98-Qb-ohy.text" xml:space="preserve">
+        <source>For what</source>
+        <target>На что</target>
+        <note>Class = "UILabel"; text = "For what"; ObjectID = "t98-Qb-ohy";</note>
+      </trans-unit>
+      <trans-unit id="tL4-dw-5Q1.text" xml:space="preserve">
+        <source>Incomes</source>
+        <target>Доходы</target>
+        <note>Class = "UILabel"; text = "Incomes"; ObjectID = "tL4-dw-5Q1";</note>
+      </trans-unit>
+      <trans-unit id="xzS-TH-TSV.placeholder" xml:space="preserve">
+        <source>Name</source>
+        <target>Наименование</target>
+        <note>Class = "UITextField"; placeholder = "Name"; ObjectID = "xzS-TH-TSV";</note>
+      </trans-unit>
+      <trans-unit id="ypL-xJ-t66.text" xml:space="preserve">
+        <source>Other</source>
+        <target>Другое</target>
+        <note>Class = "UILabel"; text = "Other"; ObjectID = "ypL-xJ-t66";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

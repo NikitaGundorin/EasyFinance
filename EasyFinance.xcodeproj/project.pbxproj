@@ -12,8 +12,10 @@
 		7219212D243B47D700743B2D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7219212B243B47D700743B2D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7219212F243B48CA00743B2D /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7219212E243B48CA00743B2D /* ChartViewController.swift */; };
 		72192131243B575B00743B2D /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72192130243B575B00743B2D /* ChartViewModel.swift */; };
-		7228C8D1243E017F009A9603 /* default-v0.realm in Resources */ = {isa = PBXBuildFile; fileRef = 7228C8D0243E017F009A9603 /* default-v0.realm */; };
+		7228C8D1243E017F009A9603 /* default-v0-ru.realm in Resources */ = {isa = PBXBuildFile; fileRef = 7228C8D0243E017F009A9603 /* default-v0-ru.realm */; };
 		7228C8D3243E06E7009A9603 /* ChartHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228C8D2243E06E7009A9603 /* ChartHelper.swift */; };
+		7243A6552440A47C008BDD89 /* default-v0-en.realm in Resources */ = {isa = PBXBuildFile; fileRef = 7243A6542440A47C008BDD89 /* default-v0-en.realm */; };
+		7243A65A2440AEA2008BDD89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7243A6582440AEA2008BDD89 /* Localizable.strings */; };
 		72533705243E0900008E7019 /* PeriodButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72533704243E0900008E7019 /* PeriodButtons.swift */; };
 		72533707243E0AF1008E7019 /* ChartViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72533706243E0AF1008E7019 /* ChartViewModelProtocol.swift */; };
 		725F512A243D175A008784C7 /* FormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F5129243D175A008784C7 /* FormatHelper.swift */; };
@@ -70,8 +72,11 @@
 		7219212B243B47D700743B2D /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = Carthage/Build/iOS/Charts.framework; sourceTree = "<group>"; };
 		7219212E243B48CA00743B2D /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		72192130243B575B00743B2D /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
-		7228C8D0243E017F009A9603 /* default-v0.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0.realm"; sourceTree = "<group>"; };
+		7228C8D0243E017F009A9603 /* default-v0-ru.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0-ru.realm"; sourceTree = "<group>"; };
 		7228C8D2243E06E7009A9603 /* ChartHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartHelper.swift; sourceTree = "<group>"; };
+		7243A6542440A47C008BDD89 /* default-v0-en.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-v0-en.realm"; sourceTree = "<group>"; };
+		7243A6572440AA07008BDD89 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		7243A6592440AEA2008BDD89 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		72533704243E0900008E7019 /* PeriodButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodButtons.swift; sourceTree = "<group>"; };
 		72533706243E0AF1008E7019 /* ChartViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModelProtocol.swift; sourceTree = "<group>"; };
 		725F5129243D175A008784C7 /* FormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatHelper.swift; sourceTree = "<group>"; };
@@ -214,12 +219,14 @@
 		72B426D624389B03006A61CC /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				7228C8D0243E017F009A9603 /* default-v0.realm */,
+				7243A6542440A47C008BDD89 /* default-v0-en.realm */,
+				7228C8D0243E017F009A9603 /* default-v0-ru.realm */,
 				72B426BF243899D2006A61CC /* AppDelegate.swift */,
 				72B426C1243899D2006A61CC /* SceneDelegate.swift */,
 				72B426C8243899D3006A61CC /* Assets.xcassets */,
 				72B426CA243899D3006A61CC /* LaunchScreen.storyboard */,
 				72B426CD243899D3006A61CC /* Info.plist */,
+				7243A6582440AEA2008BDD89 /* Localizable.strings */,
 				725F5129243D175A008784C7 /* FormatHelper.swift */,
 				7228C8D2243E06E7009A9603 /* ChartHelper.swift */,
 			);
@@ -290,6 +297,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 72B426B3243899D2006A61CC;
 			productRefGroup = 72B426BD243899D2006A61CC /* Products */;
@@ -308,9 +316,11 @@
 			files = (
 				72B426CC243899D3006A61CC /* LaunchScreen.storyboard in Resources */,
 				72DF2E29243E141200F82226 /* PeriodButtons.xib in Resources */,
+				7243A6552440A47C008BDD89 /* default-v0-en.realm in Resources */,
+				7243A65A2440AEA2008BDD89 /* Localizable.strings in Resources */,
 				72B426C9243899D3006A61CC /* Assets.xcassets in Resources */,
 				72B426C7243899D2006A61CC /* Main.storyboard in Resources */,
-				7228C8D1243E017F009A9603 /* default-v0.realm in Resources */,
+				7228C8D1243E017F009A9603 /* default-v0-ru.realm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,10 +389,19 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		7243A6582440AEA2008BDD89 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7243A6592440AEA2008BDD89 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		72B426C5243899D2006A61CC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				72B426C6243899D2006A61CC /* Base */,
+				7243A6572440AA07008BDD89 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -402,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -463,6 +483,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

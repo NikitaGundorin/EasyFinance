@@ -22,7 +22,7 @@ class ChartHelper: IAxisValueFormatter {
         chart.pinchZoomEnabled = false
         chart.doubleTapToZoomEnabled = false
         chart.legend.enabled = false
-        chart.noDataText = "Нет данных за выбранный период"
+        chart.noDataText = NSLocalizedString("No data for selected period", comment: "No data text chart")
         chart.extraRightOffset = 30
     }
     
@@ -47,6 +47,6 @@ class ChartHelper: IAxisValueFormatter {
     }
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        FormatHelper.getShortFormattedDate(date: Date(timeIntervalSince1970: value))
+        FormatHelper.getFormattedDate(date: Date(timeIntervalSince1970: value), short: true)
     }
 }
