@@ -12,11 +12,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var splashWindow: UIWindow?
+    
+    static var statusBarHeight: CGFloat?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         presentSplash(scene: scene)
+        
+        SceneDelegate.statusBarHeight = scene.statusBarManager?.statusBarFrame.height
     }
     
     private func presentSplash(scene: UIWindowScene) {

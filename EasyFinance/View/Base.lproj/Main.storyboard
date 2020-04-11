@@ -141,10 +141,23 @@
                                     <outlet property="delegate" destination="jYp-oU-IuT" id="UVf-MK-Jb7"/>
                                 </connections>
                             </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nO6-Pe-PF6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oGU-uZ-aw4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="XI7-oL-hzm"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="nO6-Pe-PF6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CJo-LE-0U3"/>
                             <constraint firstItem="8Du-zI-ECQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EQf-RD-U04"/>
+                            <constraint firstAttribute="trailing" secondItem="nO6-Pe-PF6" secondAttribute="trailing" id="GIn-Eu-dHT"/>
                             <constraint firstItem="8Du-zI-ECQ" firstAttribute="top" secondItem="U14-3C-ncd" secondAttribute="top" id="ScB-e2-Odw"/>
                             <constraint firstAttribute="trailing" secondItem="U14-3C-ncd" secondAttribute="trailing" id="UPL-Ys-AOG"/>
                             <constraint firstItem="8Du-zI-ECQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b1j-SX-I84"/>
@@ -152,6 +165,7 @@
                             <constraint firstItem="U14-3C-ncd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qTS-Oa-R1V"/>
                             <constraint firstItem="U14-3C-ncd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tWW-fV-fIh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U14-3C-ncd" secondAttribute="bottom" id="uzm-t2-wvW"/>
+                            <constraint firstItem="nO6-Pe-PF6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v4b-AF-xAT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -164,6 +178,8 @@
                         <outlet property="dataProvider" destination="jYp-oU-IuT" id="WTl-Z4-dxV"/>
                         <outlet property="dimmerView" destination="Fcd-ER-DAV" id="AyF-yV-YnF"/>
                         <outlet property="popupView" destination="U14-3C-ncd" id="byE-zu-Xz2"/>
+                        <outlet property="statusBarBlur" destination="nO6-Pe-PF6" id="zG6-7d-iLe"/>
+                        <outlet property="statusBarBlurHeight" destination="XI7-oL-hzm" id="OgT-8c-5Fm"/>
                         <outlet property="tableView" destination="8Du-zI-ECQ" id="jqB-uM-kuV"/>
                     </connections>
                 </viewController>
@@ -352,15 +368,29 @@
                                     <outlet property="delegate" destination="kZh-FD-JyV" id="YPf-q7-ZZ4"/>
                                 </connections>
                             </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9X7-k7-vGm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="evZ-xd-bxB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="EmD-gJ-Qzg"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Bni-Ah-Kx4" firstAttribute="top" secondItem="EdQ-bG-dNf" secondAttribute="top" id="23a-Ui-qmi"/>
                             <constraint firstItem="Hxj-wk-Iah" firstAttribute="top" secondItem="Bni-Ah-Kx4" secondAttribute="bottom" constant="20" id="CJk-sg-Jf3"/>
                             <constraint firstItem="auP-pM-Dv4" firstAttribute="bottom" secondItem="LdE-s5-Jxe" secondAttribute="bottom" id="IgJ-El-Uaw"/>
+                            <constraint firstItem="9X7-k7-vGm" firstAttribute="leading" secondItem="EdQ-bG-dNf" secondAttribute="leading" id="JUr-v9-kC5"/>
+                            <constraint firstAttribute="trailing" secondItem="9X7-k7-vGm" secondAttribute="trailing" id="OG7-VN-ba3"/>
                             <constraint firstItem="Bni-Ah-Kx4" firstAttribute="leading" secondItem="LdE-s5-Jxe" secondAttribute="leading" id="Pkw-bZ-Y8f"/>
                             <constraint firstItem="LdE-s5-Jxe" firstAttribute="trailing" secondItem="Bni-Ah-Kx4" secondAttribute="trailing" id="PpU-Fc-xPv"/>
                             <constraint firstItem="auP-pM-Dv4" firstAttribute="top" secondItem="EdQ-bG-dNf" secondAttribute="top" id="QPc-t4-wsc"/>
+                            <constraint firstItem="9X7-k7-vGm" firstAttribute="top" secondItem="EdQ-bG-dNf" secondAttribute="top" id="Zx9-GQ-Mk8"/>
                             <constraint firstItem="auP-pM-Dv4" firstAttribute="leading" secondItem="LdE-s5-Jxe" secondAttribute="leading" id="dL5-RU-ld6"/>
                             <constraint firstItem="auP-pM-Dv4" firstAttribute="trailing" secondItem="LdE-s5-Jxe" secondAttribute="trailing" id="nWd-iV-hlg"/>
                         </constraints>
@@ -374,6 +404,8 @@
                         <outlet property="dataProvider" destination="kZh-FD-JyV" id="9T6-ks-Ytz"/>
                         <outlet property="dimmerView" destination="0zl-VT-C2q" id="t1L-qe-A0M"/>
                         <outlet property="popupView" destination="auP-pM-Dv4" id="Kbg-Fd-tXy"/>
+                        <outlet property="statusBarBlur" destination="9X7-k7-vGm" id="hLJ-fk-ys8"/>
+                        <outlet property="statusBarBlurHeight" destination="EmD-gJ-Qzg" id="dfG-w0-Q8E"/>
                         <outlet property="tableView" destination="Bni-Ah-Kx4" id="fz8-Td-Iym"/>
                         <segue destination="STu-1l-pYY" kind="show" identifier="showExpenses" id="acj-3g-ykt"/>
                     </connections>
@@ -381,7 +413,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc4-ML-h66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <customObject id="kZh-FD-JyV" customClass="CategoryDataProvider" customModule="EasyFinance" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="3620.289855072464" y="137.94642857142856"/>
+            <point key="canvasLocation" x="3620" y="137.18140929535232"/>
         </scene>
         <!--Expense View Controller-->
         <scene sceneID="s4H-hn-ExX">

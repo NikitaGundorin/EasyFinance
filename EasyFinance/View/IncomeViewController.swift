@@ -19,6 +19,8 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var dimmerView: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var statusBarBlur: UIVisualEffectView!
+    @IBOutlet weak var statusBarBlurHeight: NSLayoutConstraint!
     
     var viewModel: IncomeViewModel!
     
@@ -47,6 +49,7 @@ class IncomeViewController: UIViewController {
         dataProvider.viewModel = viewModel
         dataProvider.delegate = self
         balance.text = viewModel.balanceText
+        statusBarBlurHeight.constant = SceneDelegate.statusBarHeight ?? 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +102,7 @@ class IncomeViewController: UIViewController {
             self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0)
         }, completion: { _ in
             self.view.bringSubviewToFront(self.tableView)
+            self.view.bringSubviewToFront(self.statusBarBlur)
             self.addTextField.text = ""
             self.addButton.isEnabled = true
         })

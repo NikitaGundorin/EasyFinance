@@ -18,6 +18,8 @@ class CategoryViewController: UIViewController {
     @IBOutlet var dataProvider: CategoryDataProvider!
     @IBOutlet weak var addButton: AddButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var statusBarBlur: UIVisualEffectView!
+    @IBOutlet weak var statusBarBlurHeight: NSLayoutConstraint!
     
     var viewModel: CategoryViewModel!
     
@@ -45,6 +47,8 @@ class CategoryViewController: UIViewController {
         
         viewModel = CategoryViewModel()
         dataProvider.viewModel = viewModel
+        
+        statusBarBlurHeight.constant = SceneDelegate.statusBarHeight ?? 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +92,7 @@ class CategoryViewController: UIViewController {
             self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0)
         }, completion: { _ in
             self.view.bringSubviewToFront(self.tableView)
+            self.view.bringSubviewToFront(self.statusBarBlur)
             self.addTextField.text = ""
             self.addButton.isEnabled = true
         })
