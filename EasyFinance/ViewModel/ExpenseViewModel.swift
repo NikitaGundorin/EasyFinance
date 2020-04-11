@@ -14,7 +14,7 @@ class ExpenseViewModel {
     let dbManager = DBManager.shared
     
     init(category: Category) {
-        if category.name == "Все" || category.name == "All" {
+        if category.categoryType == .all {
             expenses = dbManager.getAllExpenses(ascending: false)
             return
         }

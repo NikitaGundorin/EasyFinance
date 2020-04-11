@@ -65,8 +65,8 @@ class DBManager {
     }
     
     func deleteCategory(category: Category) {
-        guard let otherCategory = realm.objects(Category.self).filter("name == %@ || name == %@", "Other", "Другое").first,
-            let allCategory = realm.objects(Category.self).filter("name == %@ || name == %@", "All", "Все").first,
+        guard let otherCategory = realm.objects(Category.self).filter("type == %@", CategoryType.other.rawValue).first,
+            let allCategory = realm.objects(Category.self).filter("type == %@", CategoryType.all.rawValue).first,
             category != otherCategory,
             category != allCategory
             else { return }
@@ -84,7 +84,7 @@ class DBManager {
     }
     
     func getAllExpensesForCategory(category: Category, ascending: Bool = true) -> Results<Expense> {
-        if (category.name == "All" || category.name == "Все") { return getAllExpenses()}
+        if (category.categoryType == .all) { return getAllExpenses()}
         return realm.objects(Expense.self).filter("category == %@", category)
             .sorted(byKeyPath: "date", ascending: ascending)
     }
@@ -93,8 +93,8 @@ class DBManager {
         let result = realm.objects(Expense.self)
             .filter("date >= %@ && date <= %@", interval.start, interval.end)
             .sorted(byKeyPath: "date")
-        guard let category = category else { return result }
-        if (category.name == "All" || category.name == "Все") { return result }
+        guard let category = category,
+            category.categoryType != .all else { return result }
         return result.filter("category == %@", category)
     }
     
