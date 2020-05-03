@@ -10,43 +10,26 @@ import UIKit
 import RealmSwift
 
 class ExpenseViewController: UIViewController {
-    @IBOutlet var dataProvider: ExpenseDataProvider!
+    @IBOutlet private var dataProvider: ExpenseDataProvider!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var popupView: UIView!
-    @IBOutlet weak var dimmerView: UIView!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var valueTextField: UITextField!
-    @IBOutlet weak var addButton: AddButton!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var paymentChartButton: AddButton!
+    @IBOutlet private weak var popupView: UIView!
+    @IBOutlet private weak var dimmerView: UIView!
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var valueTextField: UITextField!
+    @IBOutlet private weak var addButton: AddButton!
+    @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var paymentChartButton: AddButton!
     
-    var viewModel: ExpenseViewModel!
+    private var viewModel: ExpenseViewModel!
     var category: Category!
     
     private var itemsToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
-        dimmerView.addGestureRecognizer(tap)
-        
-        nameTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
-        valueTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
-        
-        viewModel = ExpenseViewModel(category: category)
-        dataProvider.viewModel = viewModel
-        dataProvider.delegate = self
+        setupKeyboardBehavior()
+        setupDelegates()
         
         navigationItem.title = category.name
     }
@@ -74,17 +57,17 @@ class ExpenseViewController: UIViewController {
         itemsToken?.invalidate()
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
         self.bottomConstraint.constant = keyboardSize.height
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         self.bottomConstraint.constant = 0
     }
     
-    @objc func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
         UIView.animate(withDuration: 0.2, animations: {
             self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0)
@@ -97,7 +80,7 @@ class ExpenseViewController: UIViewController {
         })
     }
     
-    @objc func enableAddButton(_ textField: UITextField) {
+    @objc private func enableAddButton() {
         if (valueTextField.text != "" &&
             valueTextField.text != nil &&
             nameTextField.text != "" &&
@@ -110,7 +93,7 @@ class ExpenseViewController: UIViewController {
         }
     }
     
-    @IBAction func addButtonPressed(_ sender: Any) {
+    @IBAction private func addButtonPressed(_ sender: Any) {
         guard let name = nameTextField.text,
             name != "",
             let value = valueTextField.text,
@@ -133,5 +116,30 @@ class ExpenseViewController: UIViewController {
             return
         }
         dvc.category = category
+    }
+    
+    private func setupKeyboardBehavior() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        dimmerView.addGestureRecognizer(tap)
+        
+        nameTextField.addTarget(self, action: #selector(enableAddButton), for: .editingChanged)
+        valueTextField.addTarget(self, action: #selector(enableAddButton), for: .editingChanged)
+    }
+    
+    private func setupDelegates() {
+        viewModel = ExpenseViewModel(category: category)
+        dataProvider.viewModel = viewModel
+        dataProvider.delegate = self
     }
 }

@@ -12,13 +12,13 @@ import RealmSwift
 class DBManager {
     static var shared = DBManager()
     
-    let realm = try! Realm()
-        
+    private let realm = try! Realm()
+    
     func getBalance() -> Balance {
         realm.objects(Balance.self).first!
     }
     
-    func updateBalance(value: Float) {
+    private func updateBalance(value: Float) {
         let balance = getBalance()
         try! realm.write {
             balance.value += value
@@ -70,7 +70,7 @@ class DBManager {
             category != otherCategory,
             category != allCategory
             else { return }
-        let expenses = getAllExpensesForCategory(category: category)
+        let expenses = getAllExpenses(forCategory: category)
         try! realm.write {
             for expense in expenses {
                 expense.category = otherCategory
@@ -83,13 +83,13 @@ class DBManager {
         realm.objects(Expense.self).sorted(byKeyPath: "date", ascending: ascending)
     }
     
-    func getAllExpensesForCategory(category: Category, ascending: Bool = true) -> Results<Expense> {
+    func getAllExpenses(forCategory category: Category, ascending: Bool = true) -> Results<Expense> {
         if (category.categoryType == .all) { return getAllExpenses()}
         return realm.objects(Expense.self).filter("category == %@", category)
             .sorted(byKeyPath: "date", ascending: ascending)
     }
     
-    func getAllExpensesForInterval(interval: DateInterval, category: Category? = nil) -> Results<Expense> {
+    func getAllExpenses(forInterval interval: DateInterval, category: Category? = nil) -> Results<Expense> {
         let result = realm.objects(Expense.self)
             .filter("date >= %@ && date <= %@", interval.start, interval.end)
             .sorted(byKeyPath: "date")

@@ -12,42 +12,26 @@ import RealmSwift
 class IncomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var dataProvider: IncomeDataProvider!
-    @IBOutlet weak var balance: UILabel!
-    @IBOutlet weak var addButton: AddButton!
-    @IBOutlet weak var addTextField: UITextField!
-    @IBOutlet weak var popupView: UIView!
-    @IBOutlet weak var dimmerView: UIView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var statusBarBlur: UIVisualEffectView!
-    @IBOutlet weak var statusBarBlurHeight: NSLayoutConstraint!
+    @IBOutlet private var dataProvider: IncomeDataProvider!
+    @IBOutlet private weak var balance: UILabel!
+    @IBOutlet private weak var addButton: AddButton!
+    @IBOutlet private weak var addTextField: UITextField!
+    @IBOutlet private weak var popupView: UIView!
+    @IBOutlet private weak var dimmerView: UIView!
+    @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var statusBarBlur: UIVisualEffectView!
+    @IBOutlet private weak var statusBarBlurHeight: NSLayoutConstraint!
     
-    var viewModel: IncomeViewModel!
+    private var viewModel: IncomeViewModel!
     
     private var itemsToken: NotificationToken?
     private var balanceToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
-        dimmerView.addGestureRecognizer(tap)
-        
-        addTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
-        
-        viewModel = IncomeViewModel()
-        dataProvider.viewModel = viewModel
-        dataProvider.delegate = self
+
+        setupKeyboardBehavior()
+        setupDelegates()
         balance.text = viewModel.balanceText
         statusBarBlurHeight.constant = SceneDelegate.statusBarHeight ?? 0
     }
@@ -85,18 +69,18 @@ class IncomeViewController: UIViewController {
         itemsToken?.invalidate()
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
         let offset = keyboardSize.height - self.tabBarController!.tabBar.frame.size.height
         self.bottomConstraint.constant = offset
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         self.bottomConstraint.constant = 0
     }
     
-    @objc func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
         UIView.animate(withDuration: 0.2, animations: {
             self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0)
@@ -108,7 +92,7 @@ class IncomeViewController: UIViewController {
         })
     }
     
-    @objc func enableAddButton(_ textField: UITextField) {
+    @objc private func enableAddButton() {
         if (addTextField.text != "" && addTextField.text != nil) {
             addButton.isEnabled = true
         }
@@ -117,7 +101,7 @@ class IncomeViewController: UIViewController {
         }
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
+    @IBAction private func addButtonTapped(_ sender: Any) {
         guard let value = addTextField.text,
             value != ""
             else {
@@ -131,5 +115,29 @@ class IncomeViewController: UIViewController {
         }
         viewModel.addIncome(value: value)
         dismissKeyboard()
+    }
+    
+    private func setupKeyboardBehavior() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        dimmerView.addGestureRecognizer(tap)
+        
+        addTextField.addTarget(self, action: #selector(enableAddButton), for: .editingChanged)
+    }
+    
+    private func setupDelegates() {
+        viewModel = IncomeViewModel()
+        dataProvider.viewModel = viewModel
+        dataProvider.delegate = self
     }
 }

@@ -11,14 +11,14 @@ import RealmSwift
 
 class ExpenseViewModel {
     var expenses: Results<Expense>
-    let dbManager = DBManager.shared
+    private let dbManager = DBManager.shared
     
     init(category: Category) {
         if category.categoryType == .all {
             expenses = dbManager.getAllExpenses(ascending: false)
             return
         }
-        expenses = dbManager.getAllExpensesForCategory(category: category, ascending: false)
+        expenses = dbManager.getAllExpenses(forCategory: category, ascending: false)
     }
     
     func addExpense(name: String, value: String, category: Category) {

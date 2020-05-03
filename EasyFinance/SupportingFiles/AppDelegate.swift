@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bundlePath = Bundle.main.path(forResource: "default-v0-\(languageCode)", ofType: "realm")!
         let defaultPath = Realm.Configuration.defaultConfiguration.fileURL!.path
         let fileManager = FileManager.default
-
-        if !fileManager.fileExists(atPath: defaultPath){
+        
+        if !fileManager.fileExists(atPath: defaultPath) {
             do {
                 try fileManager.copyItem(atPath: bundlePath, toPath: defaultPath)
             } catch {

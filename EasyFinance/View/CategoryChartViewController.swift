@@ -10,8 +10,8 @@ import UIKit
 import Charts
 
 class CategoryChartViewController: UIViewController, ChartDelegate {
-    @IBOutlet weak var chart: LineChartView!
-    @IBOutlet weak var periodButtons: PeriodButtons!
+    @IBOutlet private weak var chart: LineChartView!
+    @IBOutlet private weak var periodButtons: PeriodButtons!
     
     var viewModel: ChartViewModelProtocol = CategoryChartViewModel()
     var category: Category?

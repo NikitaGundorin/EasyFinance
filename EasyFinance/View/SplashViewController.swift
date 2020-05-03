@@ -10,8 +10,8 @@ import UIKit
 
 class SplashViewController: UIViewController {
     
-    @IBOutlet weak var logoImage: UIImageView!
-    @IBOutlet weak var textImage: UIImageView!
+    @IBOutlet private weak var logoImage: UIImageView!
+    @IBOutlet private weak var textImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

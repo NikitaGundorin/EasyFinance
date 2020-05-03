@@ -11,7 +11,7 @@ import RealmSwift
 import Charts
 
 class ChartViewModel: ChartViewModelProtocol {
-    var dbManager = DBManager.shared
+    private let dbManager = DBManager.shared
     var incomes: Results<Income>?
     var expenses: Results<Expense>
     var period = ChartPeriod.week {
@@ -27,7 +27,7 @@ class ChartViewModel: ChartViewModelProtocol {
         expenses = dbManager.getAllExpenses()
     }
     
-    func setup() {
+    private func setup() {
         let today = Date()
         switch period {
         case .week:
@@ -45,6 +45,6 @@ class ChartViewModel: ChartViewModelProtocol {
         }
         
         incomes = dbManager.getAllIncomesForInterval(interval: interval)
-        expenses = dbManager.getAllExpensesForInterval(interval: interval)
+        expenses = dbManager.getAllExpenses(forInterval: interval)
     }
 }

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="elH-fE-BOQ">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,13 +20,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcd-ER-DAV">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="684"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-6R-fAG">
-                                        <rect key="frame" x="0.0" y="666" width="414" height="147"/>
+                                        <rect key="frame" x="0.0" y="684" width="414" height="129"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jn-hi-0NI" customClass="AddButton" customModule="EasyFinance" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="59" width="374" height="48"/>
+                                                <rect key="frame" x="20" y="59" width="374" height="30"/>
                                                 <state key="normal" title="Add income"/>
                                                 <connections>
                                                     <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u27-mJ-y3B"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Du-zI-ECQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="723"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="7Mo-2G-sRC">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="112.5"/>
@@ -277,13 +277,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zl-VT-C2q">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="684"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phJ-93-BaA">
-                                        <rect key="frame" x="0.0" y="666" width="414" height="147"/>
+                                        <rect key="frame" x="0.0" y="684" width="414" height="129"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxj-wk-Iah" customClass="AddButton" customModule="EasyFinance" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="59" width="374" height="48"/>
+                                                <rect key="frame" x="20" y="59" width="374" height="30"/>
                                                 <state key="normal" title="Add expenses category"/>
                                                 <connections>
                                                     <action selector="addButtonTapped:" destination="iwi-GB-6wY" eventType="touchUpInside" id="crY-WI-T4Z"/>
@@ -318,7 +318,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bni-Ah-Kx4">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="723"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="onH-AF-ckp">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -427,13 +427,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bv7-lC-CHt">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="710"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87k-3I-UZu">
-                                        <rect key="frame" x="0.0" y="710" width="414" height="186"/>
+                                        <rect key="frame" x="0.0" y="728" width="414" height="168"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-lQ-e3S" customClass="AddButton" customModule="EasyFinance" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="98" width="374" height="48"/>
+                                                <rect key="frame" x="20" y="98" width="374" height="30"/>
                                                 <state key="normal" title="Add expense"/>
                                                 <connections>
                                                     <action selector="addButtonPressed:" destination="STu-1l-pYY" eventType="touchUpInside" id="ido-Sy-gJV"/>
@@ -476,7 +476,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vAS-9f-cFk">
-                                <rect key="frame" x="0.0" y="176" width="414" height="612"/>
+                                <rect key="frame" x="0.0" y="158" width="414" height="648"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="aMo-5I-NdJ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -564,7 +564,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAU-Ae-URy" customClass="AddButton" customModule="EasyFinance" customModuleProvider="target">
-                                <rect key="frame" x="20" y="108" width="374" height="48"/>
+                                <rect key="frame" x="20" y="108" width="374" height="30"/>
                                 <state key="normal" title="Payments chart"/>
                                 <connections>
                                     <segue destination="fle-P3-XDD" kind="show" id="s6X-51-azJ"/>

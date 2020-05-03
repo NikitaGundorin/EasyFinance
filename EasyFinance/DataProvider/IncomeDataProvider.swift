@@ -16,7 +16,7 @@ class IncomeDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.incomes.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "incomeCell",
                                                        for: indexPath) as? IncomeTableViewCell
@@ -51,18 +51,18 @@ class IncomeDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
         return swipeActionsConfiguration
     }
     
-    func showDeleteAlert(deleteHandler: ((UIAlertAction) -> Void)?, cancelHandler: ((UIAlertAction) -> Void)?) {
+    private func showDeleteAlert(deleteHandler: ((UIAlertAction) -> Void)?, cancelHandler: ((UIAlertAction) -> Void)?) {
         let title = NSLocalizedString("Delete income?", comment: "Delete income alert title")
         let message = NSLocalizedString("This income will be deleted. This action cannot be undone.", comment: "Delete income alert message")
-
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let delete = NSLocalizedString("Delete", comment: "Delete action for expense alert")
         let cancel = NSLocalizedString("Cancel", comment: "Cancel action for expense alert")
-
+        
         alert.addAction(UIAlertAction(title: delete, style: .destructive, handler: deleteHandler))
         alert.addAction(UIAlertAction(title: cancel, style: .cancel, handler: cancelHandler))
-
+        
         delegate?.present(alert, animated: true)
     }
 }

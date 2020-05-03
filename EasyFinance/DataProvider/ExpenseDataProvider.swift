@@ -53,7 +53,7 @@ class ExpenseDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate 
         return swipeActionsConfiguration
     }
     
-    func showDeleteAlert(deleteHandler: ((UIAlertAction) -> Void)?, cancelHandler: ((UIAlertAction) -> Void)?) {
+    private func showDeleteAlert(deleteHandler: ((UIAlertAction) -> Void)?, cancelHandler: ((UIAlertAction) -> Void)?) {
         let title = NSLocalizedString("Delete expense?", comment: "Delete expense alert title")
         let message = NSLocalizedString("This expense will be deleted. This action cannot be undone.", comment: "Delete expense alert message")
         

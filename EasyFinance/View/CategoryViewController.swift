@@ -12,42 +12,24 @@ import RealmSwift
 class CategoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var popupView: UIView!
-    @IBOutlet weak var dimmerView: UIView!
-    @IBOutlet weak var addTextField: UITextField!
-    @IBOutlet var dataProvider: CategoryDataProvider!
-    @IBOutlet weak var addButton: AddButton!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var statusBarBlur: UIVisualEffectView!
-    @IBOutlet weak var statusBarBlurHeight: NSLayoutConstraint!
+    @IBOutlet private weak var popupView: UIView!
+    @IBOutlet private weak var dimmerView: UIView!
+    @IBOutlet private weak var addTextField: UITextField!
+    @IBOutlet private var dataProvider: CategoryDataProvider!
+    @IBOutlet private weak var addButton: AddButton!
+    @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var statusBarBlur: UIVisualEffectView!
+    @IBOutlet private weak var statusBarBlurHeight: NSLayoutConstraint!
     
-    var viewModel: CategoryViewModel!
+    private var viewModel: CategoryViewModel!
     
     private var itemsToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataProvider.delegate = self
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        
-        dimmerView.addGestureRecognizer(tap)
-        
-        addTextField.addTarget(self, action: #selector(self.enableAddButton(_:)), for: .editingChanged)
-        
-        viewModel = CategoryViewModel()
-        dataProvider.viewModel = viewModel
-        
+        setupKeyboardBehavior()
+        setupDelegates()
         statusBarBlurHeight.constant = SceneDelegate.statusBarHeight ?? 0
     }
     
@@ -75,18 +57,18 @@ class CategoryViewController: UIViewController {
         itemsToken?.invalidate()
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
         let offset = keyboardSize.height - self.tabBarController!.tabBar.frame.size.height
         self.bottomConstraint.constant = offset
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         self.bottomConstraint.constant = 0
     }
     
-    @objc func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
         UIView.animate(withDuration: 0.2, animations: {
             self.dimmerView.backgroundColor = UIColor(white: 0, alpha: 0)
@@ -98,7 +80,7 @@ class CategoryViewController: UIViewController {
         })
     }
     
-    @objc func enableAddButton(_ textField: UITextField) {
+    @objc private func enableAddButton() {
         if (addTextField.text != "" && addTextField.text != nil) {
             addButton.isEnabled = true
         }
@@ -107,7 +89,7 @@ class CategoryViewController: UIViewController {
         }
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
+    @IBAction private func addButtonTapped(_ sender: Any) {
         guard let name = addTextField.text,
             name != ""
             else {
@@ -145,5 +127,29 @@ class CategoryViewController: UIViewController {
         
         let category = viewModel.categories[row]
         dvc.category = category
+    }
+    
+    private func setupKeyboardBehavior() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        dimmerView.addGestureRecognizer(tap)
+        
+        addTextField.addTarget(self, action: #selector(enableAddButton), for: .editingChanged)
+    }
+    
+    private func setupDelegates() {
+        dataProvider.delegate = self
+        viewModel = CategoryViewModel()
+        dataProvider.viewModel = viewModel
     }
 }

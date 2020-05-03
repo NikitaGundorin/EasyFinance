@@ -14,10 +14,12 @@ class IncomeViewModel {
     var balance: Balance {
         return dbManager.getBalance()
     }
+    
     var balanceText: String {
         return FormatHelper.getFormattedCurrency(value: balance.value)
     }
-    let dbManager = DBManager.shared
+    
+    private let dbManager = DBManager.shared
     
     init() {
         incomes = dbManager.getAllIncomes(ascending: false)
@@ -28,6 +30,7 @@ class IncomeViewModel {
             print("error while converting string to float")
             return
         }
+        
         let income = Income()
         income.value = value
         dbManager.addIncome(income: income)

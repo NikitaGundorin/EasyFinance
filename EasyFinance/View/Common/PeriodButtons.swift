@@ -20,7 +20,7 @@ class PeriodButtons: UIView {
 
     weak var delegate: ChartDelegate?
     
-    let nibName = "PeriodButtons"
+    private let nibName = "PeriodButtons"
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,7 +32,7 @@ class PeriodButtons: UIView {
         commonInit()
     }
     
-    func commonInit() {
+    private func commonInit() {
         guard let view = loadViewFromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
@@ -48,12 +48,12 @@ class PeriodButtons: UIView {
         setBorderFor(button: weekButton, underline: weekButtonUnderline)
     }
     
-    func loadViewFromNib() -> UIView? {
+    private func loadViewFromNib() -> UIView? {
         let nib = UINib(nibName: nibName, bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
-    func setBorderFor(button: UIButton, underline: UIView) {
+    private func setBorderFor(button: UIButton, underline: UIView) {
         for btn in [weekButton, monthButton, quarterButton, allButton] {
             if (btn == button) {
                 btn?.layer.borderWidth = 1

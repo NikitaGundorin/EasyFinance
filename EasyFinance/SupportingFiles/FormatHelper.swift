@@ -37,7 +37,6 @@ class FormatHelper {
         var locale: Locale
         if let preferredIdentifier = Locale.preferredLanguages.first {
             locale = Locale(identifier: preferredIdentifier)
-
         } else {
             locale = Locale.current
         }
@@ -53,7 +52,9 @@ class FormatHelper {
 
 extension Date {
     func startOfMonth() -> Date {
-        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+        let dateComponents = Calendar.current.dateComponents([.year, .month],
+                                                             from: Calendar.current.startOfDay(for: self))
+        return Calendar.current.date(from: dateComponents)!
     }
     
     func next(_ weekday: Weekday, considerToday: Bool = false) -> Date {
@@ -68,9 +69,9 @@ extension Date {
                    considerToday: considerToday)
     }
     
-    func get(_ direction: SearchDirection,
-             _ weekDay: Weekday,
-             considerToday consider: Bool = false) -> Date {
+    private func get(_ direction: SearchDirection,
+                     _ weekDay: Weekday,
+                     considerToday consider: Bool = false) -> Date {
         
         let dayName = weekDay.rawValue
         
@@ -105,8 +106,7 @@ extension Date {
     }
     
     func startOfQuarter() -> Date {
-        var components = Calendar.current.dateComponents([.month, .day, .year], from: self.startOfMonth())
-
+        var components = Calendar.current.dateComponents([.month, .day, .year], from: startOfMonth())
         let newMonth: Int
         switch components.month! {
         case 1,2,3: newMonth = 1
@@ -127,10 +127,8 @@ extension Date {
     func currentDay() -> Int {
         return Calendar.current.component(.day, from: self)
     }
-}
-
-extension Date {
-    func getWeekDaysInEnglish() -> [String] {
+    
+    private func getWeekDaysInEnglish() -> [String] {
         var calendar = Calendar(identifier: .gregorian)
         calendar.locale = Locale(identifier: "en_US_POSIX")
         return calendar.weekdaySymbols

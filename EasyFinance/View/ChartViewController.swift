@@ -10,9 +10,9 @@ import UIKit
 import Charts
 
 class ChartViewController: UIViewController, ChartDelegate {
-    @IBOutlet weak var chart: LineChartView!
-    @IBOutlet weak var legend: UIStackView!
-    @IBOutlet weak var periodButtons: PeriodButtons!
+    @IBOutlet private weak var chart: LineChartView!
+    @IBOutlet private weak var legend: UIStackView!
+    @IBOutlet private weak var periodButtons: PeriodButtons!
     
     var viewModel: ChartViewModelProtocol = ChartViewModel()
     

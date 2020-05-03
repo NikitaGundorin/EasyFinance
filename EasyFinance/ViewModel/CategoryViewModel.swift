@@ -11,7 +11,7 @@ import RealmSwift
 
 class CategoryViewModel {
     var categories: Results<Category>
-    let dbManager = DBManager.shared
+    private let dbManager = DBManager.shared
     
     init() {
         categories = dbManager.getAllCategories()
